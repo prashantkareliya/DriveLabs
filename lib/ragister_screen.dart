@@ -1,3 +1,6 @@
+import 'package:drive_labs/main.dart';
+import 'package:drive_labs/program_screen.dart';
+import 'package:drive_labs/your_location_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -142,7 +145,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
               text: LabelString.labelStartLearning,
               backgroundColor: AppColors.yellowColor,
               textColor: AppColors.blackColor,
-              onPressed: () {},
+              onPressed: () {
+                navigationService.push(ProgramScreen());
+              },
               borderColor: AppColors.blackColor,
             ),
             14.verticalSpace,

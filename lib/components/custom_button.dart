@@ -7,6 +7,7 @@ class CustomButton extends StatelessWidget {
   final Color textColor;
   final VoidCallback onPressed;
   final Widget? leadingIcon;
+  final Widget? trailingIcon;
   final Color? borderColor;
   const CustomButton({
     super.key,
@@ -15,6 +16,7 @@ class CustomButton extends StatelessWidget {
     required this.textColor,
     required this.onPressed,
     this.leadingIcon,
+    this.trailingIcon,
     this.borderColor
   });
 
@@ -39,7 +41,10 @@ class CustomButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
-
+            if (trailingIcon != null) ...[
+              trailingIcon!,
+              const SizedBox(width: 8),
+            ],
             Text(
               text,
               style: GoogleFonts.montserrat(

@@ -48,6 +48,22 @@ class LabelString {
   static const String labelEnterPhoneNumber = 'Enter Phone Number';
   static const String labelConfirmPassword = 'Confirm Password';
   static const String labelEnterConfirmPassword = 'Enter Confirm Password';
+  static const String labelEnterYourPincode = 'Enter Your Pincode';
+  static const String labelEnterPincode = 'Enter Pincode';
+  static const String labelFullAddress = 'Full Address';
+  static const String labelEnterFullAddress = 'Enter Full Address';
+  static const String labelSubmit = 'Submit';
+  static const String labelReferFriend = 'Refer a friend';
+  static const String labelYesIn = 'Yes, I’m In';
+  static const String labelContactUs = 'Contact Us';
+  static const String labelEnterCode = 'Enter code';
+  static const String labelEnterReferralCode = 'Enter referral/discount code';
+  static const String labelApply = 'Apply';
+  static const String labelDone = 'DONE';
+  static const String labelPayNow = 'Paynow';
+  static const String labelChooseCar = 'Choose Your Car';
+  static const String labelNext = 'Next';
+  static const String labelLicensingProcedures = 'Licensing Procedures';
 }
 
 //Button Strings

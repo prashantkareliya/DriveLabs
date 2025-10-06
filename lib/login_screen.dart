@@ -1,11 +1,14 @@
 import 'package:drive_labs/constants/app_colours/app_colors.dart';
 import 'package:drive_labs/constants/strings.dart';
+import 'package:drive_labs/program_screen.dart';
+import 'package:drive_labs/your_location_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'components/custom_button.dart';
 import 'components/custom_textField.dart';
 import 'gen/assets.gen.dart';
+import 'main.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -86,7 +89,9 @@ class _LoginScreenState extends State<LoginScreen> {
               text: LabelString.labelStartLearning,
               backgroundColor: AppColors.yellowColor,
               textColor: AppColors.blackColor,
-              onPressed: () {},
+              onPressed: () {
+                navigationService.push(ProgramScreen());
+              },
               borderColor: AppColors.blackColor,
             ),
             14.verticalSpace,

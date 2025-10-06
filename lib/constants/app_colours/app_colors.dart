@@ -7,8 +7,11 @@ class AppColors {
   static Color yellowColor = const Color(0xFFFEDD00);
   static Color errorRed = const Color(0xFFFF0000);
   static Color redColor = const Color(0xFFFF3C45);
+  static Color redButtonColor = const Color(0xFFFF3131);
   static Color gray = const Color(0xFFF5F5F5);
   static Color blueLight = const Color(0xFF5a88f8);
+  static Color green = const Color(0xFF2A8D5C);
+  static Color grayFont = const Color(0xFF1F2125);
 
 
   static const Color transparent = Colors.transparent;

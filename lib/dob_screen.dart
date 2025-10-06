@@ -1,4 +1,5 @@
 import 'package:drive_labs/constants/app_colours/app_colors.dart';
+import 'package:drive_labs/your_location_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -114,7 +115,7 @@ class _DOBScreenState extends State<DOBScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          navigationService.push(LoginRegistrationScreen());
+          navigationService.push(YourLocationScreen());
         },
         backgroundColor: AppColors.black,
         child: Icon(Icons.start, color: AppColors.yellowColor, size: 30),
