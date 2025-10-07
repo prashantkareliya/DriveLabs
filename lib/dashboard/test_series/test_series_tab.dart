@@ -73,7 +73,7 @@ class _TestSeriesTabState extends State<TestSeriesTab> {
             style: GoogleFonts.montserrat(fontSize: 16, color: AppColors.green, fontWeight: FontWeight.w700),
           ),
           minTileHeight: 50,
-          trailing: isExpanded ? SvgPicture.asset("assets/icons/arrow_up.svg") : SvgPicture.asset("assets/icons/arrow_down.svg"),
+          trailing: isExpanded ? Assets.icons.arrowUp.svg() : Assets.icons.arrowDown.svg(),
           onExpansionChanged: (bool expanded) {
             setState(() {
               _expandedIndex = expanded ? index : -1;

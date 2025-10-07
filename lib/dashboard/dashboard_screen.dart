@@ -3,6 +3,7 @@ import 'package:drive_labs/dashboard/pregress/progress_tab.dart';
 import 'package:drive_labs/dashboard/progress_overview/progress_pverview_tab.dart';
 import 'package:drive_labs/dashboard/roadmap/roadmap_tab.dart';
 import 'package:drive_labs/dashboard/test_series/test_series_tab.dart';
+import 'package:drive_labs/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -20,10 +21,9 @@ class DashboardScreen extends StatefulWidget {
 class _DashboardScreenState extends State<DashboardScreen> {
   int _selectedIndex = 2;
 
-  final List<Widget> _screens = [TestSeriesTab(), ProgressTab(), HomeTab(), RoadmapTab(), ProgressOverviewTab()];
+  final List<Widget> _screens = [TestSeriesTab(), MyTrips(), HomeTab(), RoadmapTab(), ProgressTab()];
 
   final List<String> _icons = [
-    //SvgPicture.asset("assets/icons/location.svg", height: 25.sp)
     "assets/icons/zero.svg",
     "assets/icons/one.svg",
     "assets/icons/two.png",
@@ -31,7 +31,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     "assets/icons/four.svg",
   ];
 
-  final List<String> _labels = ['Test Series', 'Progress', '', 'Roadmap', 'Progress'];
+  final List<String> _labels = ['Test series ', 'My Trips', '', 'Roadmap', 'Progress'];
 
   void _onTabTapped(int index) {
     setState(() {
@@ -64,9 +64,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       child: FloatingActionButton(
                         onPressed: () => _onTabTapped(index),
                         backgroundColor: Colors.white,
-                        child: Image.asset("assets/icons/two.png"),
+                        child: Assets.icons.two.image()),
                       ),
-                    ),
                   ],
                 );
               } else {

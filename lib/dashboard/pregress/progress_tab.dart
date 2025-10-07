@@ -4,14 +4,14 @@ import 'package:drive_labs/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ProgressTab extends StatefulWidget {
-  const ProgressTab({super.key});
+class MyTrips extends StatefulWidget {
+  const MyTrips({super.key});
 
   @override
-  State<ProgressTab> createState() => _ProgressTabState();
+  State<MyTrips> createState() => _MyTripsState();
 }
 
-class _ProgressTabState extends State<ProgressTab> {
+class _MyTripsState extends State<MyTrips> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

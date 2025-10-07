@@ -12,6 +12,7 @@ class AppColors {
   static Color blueLight = const Color(0xFF5a88f8);
   static Color green = const Color(0xFF2A8D5C);
   static Color grayFont = const Color(0xFF1F2125);
+  static Color orange = const Color(0xFFF99C35);
 
 
   static const Color transparent = Colors.transparent;
