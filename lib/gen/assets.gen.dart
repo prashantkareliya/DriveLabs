@@ -27,6 +27,13 @@ class $AssetsIconsGen {
   /// File path: assets/icons/arrow_up.svg
   SvgGenImage get arrowUp => const SvgGenImage('assets/icons/arrow_up.svg');
 
+  /// File path: assets/icons/emp_home.svg
+  SvgGenImage get empHome => const SvgGenImage('assets/icons/emp_home.svg');
+
+  /// File path: assets/icons/emp_profile.svg
+  SvgGenImage get empProfile =>
+      const SvgGenImage('assets/icons/emp_profile.svg');
+
   /// File path: assets/icons/four.svg
   SvgGenImage get four => const SvgGenImage('assets/icons/four.svg');
 
@@ -35,6 +42,9 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/ic_map.png
   AssetGenImage get icMap => const AssetGenImage('assets/icons/ic_map.png');
+
+  /// File path: assets/icons/info.svg
+  SvgGenImage get info => const SvgGenImage('assets/icons/info.svg');
 
   /// File path: assets/icons/licensing_1.png
   AssetGenImage get licensing1 =>
@@ -48,6 +58,9 @@ class $AssetsIconsGen {
   AssetGenImage get licensing3 =>
       const AssetGenImage('assets/icons/licensing_3.png');
 
+  /// File path: assets/icons/map.svg
+  SvgGenImage get map => const SvgGenImage('assets/icons/map.svg');
+
   /// File path: assets/icons/master_card.png
   AssetGenImage get masterCard =>
       const AssetGenImage('assets/icons/master_card.png');
@@ -55,15 +68,37 @@ class $AssetsIconsGen {
   /// File path: assets/icons/one.svg
   SvgGenImage get one => const SvgGenImage('assets/icons/one.svg');
 
+  /// File path: assets/icons/phone.svg
+  SvgGenImage get phone => const SvgGenImage('assets/icons/phone.svg');
+
+  /// File path: assets/icons/phone_1.svg
+  SvgGenImage get phone1 => const SvgGenImage('assets/icons/phone_1.svg');
+
   /// File path: assets/icons/phone_pay.png
   AssetGenImage get phonePay =>
       const AssetGenImage('assets/icons/phone_pay.png');
 
+  /// File path: assets/icons/route.svg
+  SvgGenImage get route => const SvgGenImage('assets/icons/route.svg');
+
+  /// File path: assets/icons/setting.svg
+  SvgGenImage get setting => const SvgGenImage('assets/icons/setting.svg');
+
   /// File path: assets/icons/share.png
   AssetGenImage get share => const AssetGenImage('assets/icons/share.png');
 
+  /// File path: assets/icons/star.svg
+  SvgGenImage get star => const SvgGenImage('assets/icons/star.svg');
+
+  /// File path: assets/icons/star_yellow.svg
+  SvgGenImage get starYellow =>
+      const SvgGenImage('assets/icons/star_yellow.svg');
+
   /// File path: assets/icons/three.svg
   SvgGenImage get three => const SvgGenImage('assets/icons/three.svg');
+
+  /// File path: assets/icons/timer.svg
+  SvgGenImage get timer => const SvgGenImage('assets/icons/timer.svg');
 
   /// File path: assets/icons/two.png
   AssetGenImage get two => const AssetGenImage('assets/icons/two.png');
@@ -76,17 +111,28 @@ class $AssetsIconsGen {
     arrowDown,
     arrowRight,
     arrowUp,
+    empHome,
+    empProfile,
     four,
     gpay,
     icMap,
+    info,
     licensing1,
     licensing2,
     licensing3,
+    map,
     masterCard,
     one,
+    phone,
+    phone1,
     phonePay,
+    route,
+    setting,
     share,
+    star,
+    starYellow,
     three,
+    timer,
     two,
     zero,
   ];
@@ -135,6 +181,13 @@ class $AssetsImagesGen {
   /// File path: assets/images/dob.png
   AssetGenImage get dob => const AssetGenImage('assets/images/dob.png');
 
+  /// File path: assets/images/emp_bg.png
+  AssetGenImage get empBg => const AssetGenImage('assets/images/emp_bg.png');
+
+  /// File path: assets/images/emp_btm_bg.png
+  AssetGenImage get empBtmBg =>
+      const AssetGenImage('assets/images/emp_btm_bg.png');
+
   /// File path: assets/images/google_img.png
   AssetGenImage get googleImg =>
       const AssetGenImage('assets/images/google_img.png');
@@ -173,6 +226,9 @@ class $AssetsImagesGen {
   AssetGenImage get loginRegistration2 =>
       const AssetGenImage('assets/images/login_registration_2.png');
 
+  /// File path: assets/images/map.png
+  AssetGenImage get map => const AssetGenImage('assets/images/map.png');
+
   /// File path: assets/images/our_courses.png
   AssetGenImage get ourCourses =>
       const AssetGenImage('assets/images/our_courses.png');
@@ -180,6 +236,34 @@ class $AssetsImagesGen {
   /// File path: assets/images/payment_with.png
   AssetGenImage get paymentWith =>
       const AssetGenImage('assets/images/payment_with.png');
+
+  /// File path: assets/images/post_class (1).png
+  AssetGenImage get postClass1 =>
+      const AssetGenImage('assets/images/post_class (1).png');
+
+  /// File path: assets/images/post_class (2).png
+  AssetGenImage get postClass2 =>
+      const AssetGenImage('assets/images/post_class (2).png');
+
+  /// File path: assets/images/post_class (3).png
+  AssetGenImage get postClass3 =>
+      const AssetGenImage('assets/images/post_class (3).png');
+
+  /// File path: assets/images/post_class (4).png
+  AssetGenImage get postClass4 =>
+      const AssetGenImage('assets/images/post_class (4).png');
+
+  /// File path: assets/images/post_class (5).png
+  AssetGenImage get postClass5 =>
+      const AssetGenImage('assets/images/post_class (5).png');
+
+  /// File path: assets/images/post_class (6).png
+  AssetGenImage get postClass6 =>
+      const AssetGenImage('assets/images/post_class (6).png');
+
+  /// File path: assets/images/post_class.png
+  AssetGenImage get postClass =>
+      const AssetGenImage('assets/images/post_class.png');
 
   /// File path: assets/images/profile.png
   AssetGenImage get profile => const AssetGenImage('assets/images/profile.png');
@@ -200,9 +284,21 @@ class $AssetsImagesGen {
   AssetGenImage get progressOverview =>
       const AssetGenImage('assets/images/progress_overview.png');
 
+  /// File path: assets/images/route_detail.png
+  AssetGenImage get routeDetail =>
+      const AssetGenImage('assets/images/route_detail.png');
+
   /// File path: assets/images/status_bar.png
   AssetGenImage get statusBar =>
       const AssetGenImage('assets/images/status_bar.png');
+
+  /// File path: assets/images/student_detail.png
+  AssetGenImage get studentDetail =>
+      const AssetGenImage('assets/images/student_detail.png');
+
+  /// File path: assets/images/student_detail_btm.png
+  AssetGenImage get studentDetailBtm =>
+      const AssetGenImage('assets/images/student_detail_btm.png');
 
   /// File path: assets/images/subscription_1.png
   AssetGenImage get subscription1 =>
@@ -252,6 +348,14 @@ class $AssetsImagesGen {
   AssetGenImage get tabRegisterInactive =>
       const AssetGenImage('assets/images/tab_register_inactive.png');
 
+  /// File path: assets/images/teaching_schedule.png
+  AssetGenImage get teachingSchedule =>
+      const AssetGenImage('assets/images/teaching_schedule.png');
+
+  /// File path: assets/images/temp_map.png
+  AssetGenImage get tempMap =>
+      const AssetGenImage('assets/images/temp_map.png');
+
   /// File path: assets/images/test_series.png
   AssetGenImage get testSeries =>
       const AssetGenImage('assets/images/test_series.png');
@@ -269,6 +373,8 @@ class $AssetsImagesGen {
     courseGiftCard,
     coursesText,
     dob,
+    empBg,
+    empBtmBg,
     googleImg,
     home,
     intro1,
@@ -280,14 +386,25 @@ class $AssetsImagesGen {
     locationText,
     loginRegistration,
     loginRegistration2,
+    map,
     ourCourses,
     paymentWith,
+    postClass1,
+    postClass2,
+    postClass3,
+    postClass4,
+    postClass5,
+    postClass6,
+    postClass,
     profile,
     programBg,
     programMap,
     progress,
     progressOverview,
+    routeDetail,
     statusBar,
+    studentDetail,
+    studentDetailBtm,
     subscription1,
     subscription2,
     subscription3,
@@ -300,6 +417,8 @@ class $AssetsImagesGen {
     tabLoginInactive,
     tabRegister,
     tabRegisterInactive,
+    teachingSchedule,
+    tempMap,
     testSeries,
   ];
 }

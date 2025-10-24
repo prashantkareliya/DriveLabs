@@ -24,6 +24,11 @@ class ErrorString {
   static const String reasonErr = "ⓘ Select reason";
   static const String pickTimeErr = "ⓘ Please select pickup time";
 
+  ///emp
+  static const String employeeIdErr = "ⓘ Enter Employee ID";
+  static const String notesErr = "ⓘ Enter Notes";
+  static const String msgErr = "ⓘ Enter Message";
+
 }
 //271828
 //Messages
@@ -64,6 +69,18 @@ class LabelString {
   static const String labelChooseCar = 'Choose Your Car';
   static const String labelNext = 'Next';
   static const String labelLicensingProcedures = 'Licensing Procedures';
+  static const String labelProceed = 'Proceed';
+
+///Emp
+  static const String labelEmployeeID = 'EmployeeID';
+  static const String labelUname = 'Username/Phone number';
+
+  static const String labelLastClassNotes = 'Last Class Notes';
+  static const String labelEnterNotes = 'Enter Notes';
+
+  static const String labelStudentMessage = 'Student Message';
+  static const String labelTotalRating = 'Total Rating';
+
 }
 
 //Button Strings
@@ -74,7 +91,7 @@ class OtherString {
 //Button Strings
 class ImageString {
   static const String icPlaceHolder = "";
-  static const String imgProfile = "assets/images/profile.png";
+  static const String imgProfile = "assets/images/emp_profile.png";
   static const String imgLoader = "assets/images/loader.png";
   static const String imgLoginRegistration = "assets/images/login_registration_2.png";
   static const String imgLogin = "assets/images/tab_login.png";
@@ -84,6 +101,8 @@ class ImageString {
   static const String imgIntro2 = "assets/images/intro_2.png";
   static const String imgIntro3 = "assets/images/intro_3.png";
   static const String imgIntro4 = "assets/images/intro_4.png";
+  static const String imgEmpLogin = "assets/images/emp_btm_bg.png";
+  static const String imgStudentDetailBtm = "assets/images/student_detail_btm.png";
 
 
 }

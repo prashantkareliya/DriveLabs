@@ -9,6 +9,7 @@ class CustomButton extends StatelessWidget {
   final Widget? leadingIcon;
   final Widget? trailingIcon;
   final Color? borderColor;
+  final double? fontSize;
   const CustomButton({
     super.key,
     required this.text,
@@ -17,7 +18,8 @@ class CustomButton extends StatelessWidget {
     required this.onPressed,
     this.leadingIcon,
     this.trailingIcon,
-    this.borderColor
+    this.borderColor,
+    this.fontSize,
   });
 
   @override
@@ -48,7 +50,7 @@ class CustomButton extends StatelessWidget {
             Text(
               text,
               style: GoogleFonts.montserrat(
-                fontSize: 20,
+                fontSize: fontSize ?? 20,
                 fontWeight: FontWeight.bold,
                 color: textColor,
               ),

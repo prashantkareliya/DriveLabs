@@ -10,6 +10,7 @@ class AppColors {
   static Color redButtonColor = const Color(0xFFFF3131);
   static Color gray = const Color(0xFFF5F5F5);
   static Color blueLight = const Color(0xFF5a88f8);
+  static Color skyBlueLight = const Color(0xFFD3FFFF);
   static Color green = const Color(0xFF2A8D5C);
   static Color grayFont = const Color(0xFF1F2125);
   static Color orange = const Color(0xFFF99C35);

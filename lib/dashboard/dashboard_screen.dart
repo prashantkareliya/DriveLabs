@@ -1,5 +1,4 @@
 import 'package:drive_labs/constants/app_colours/app_colors.dart';
-import 'package:drive_labs/dashboard/pregress/progress_tab.dart';
 import 'package:drive_labs/dashboard/progress_overview/progress_pverview_tab.dart';
 import 'package:drive_labs/dashboard/roadmap/roadmap_tab.dart';
 import 'package:drive_labs/dashboard/test_series/test_series_tab.dart';
@@ -10,6 +9,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'home/home_tab.dart';
+import 'my_trips/my_trips_tab.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});

@@ -68,7 +68,7 @@ class ApiEndPoint {
 
 
   static String uploadReport(String id) => "report/upload/$id";
-  static String uploadProfileImage(String id, String type) => "api/upload-profile/$type/$id";
+  static String uploadProfileImage(String id, String type) => "api/upload-emp_profile/$type/$id";
 
 
 
