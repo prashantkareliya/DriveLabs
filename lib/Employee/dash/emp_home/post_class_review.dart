@@ -1,5 +1,6 @@
 import 'package:drive_labs/Employee/dash/emp_home/student_detail.dart';
 import 'package:drive_labs/components/context_extension.dart';
+import 'package:drive_labs/components/custom_button.dart';
 import 'package:drive_labs/constants/app_colours/app_colors.dart';
 import 'package:drive_labs/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
@@ -60,17 +61,24 @@ class _PostClassReviewState extends State<PostClassReview> {
                 // Step Text
                 Text(
                   '$currentStep/$totalSteps',
-                  style: GoogleFonts.montserrat(fontSize: 16, fontWeight: FontWeight.w600, color: AppColors.green),
+                  style: GoogleFonts.montserrat(fontSize: 16, fontWeight: FontWeight.bold, color: AppColors.green),
                 ),
 
                 12.verticalSpace,
                 // Progress Bar
-                LinearProgressIndicator(
-                  value: progress,
-                  minHeight: 18,
-                  borderRadius: BorderRadius.circular(20.0),
-                  backgroundColor: AppColors.whiteColor,
-                  color: AppColors.green,
+                Container(
+                  decoration: BoxDecoration(
+                    color: AppColors.whiteColor,
+                    border: Border.all(color: AppColors.whiteColor, width: 1),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: LinearProgressIndicator(
+                    value: progress,
+                    minHeight: 18,
+                    borderRadius: BorderRadius.circular(20.0),
+                    backgroundColor: AppColors.whiteColor,
+                    color: AppColors.green,
+                  ),
                 ),
 
                 40.verticalSpace,
@@ -85,16 +93,67 @@ class _PostClassReviewState extends State<PostClassReview> {
                       });
                     },
                     itemBuilder: (context, index) {
-                      return Column(
-                        children: [
-                          Assets.images.postClass6.image(height: 50),
-                          15.verticalSpace,
-                          StarRating(rating: 1, maxRating: 5, iconHeight: 50),
-                          80.verticalSpace,
-                          Assets.images.postClass1.image(height: 50),
-                          15.verticalSpace,
-                          StarRating(rating: 1, maxRating: 5, iconHeight: 50),
-                        ],
+                      Widget stepWidget;
+                      switch (index) {
+                        case 0:
+                          stepWidget = Column(
+                            children: [
+                              Assets.images.postClass6.image(height: 50),
+                              10.verticalSpace,
+                              StarRating(rating: 1, maxRating: 5, iconHeight: 50),
+                              80.verticalSpace,
+                              Assets.images.postClass1.image(height: 50),
+                              10.verticalSpace,
+                              StarRating(rating: 1, maxRating: 5, iconHeight: 50),
+                            ],
+                          );
+                          break;
+
+                        case 1:
+                          stepWidget = Column(
+                            children: [
+                              Assets.images.postClass2.image(height: 50),
+                              10.verticalSpace,
+                              StarRating(rating: 1, maxRating: 5, iconHeight: 50),
+                              80.verticalSpace,
+                              Assets.images.postClass5.image(height: 50),
+                              10.verticalSpace,
+                              StarRating(rating: 1, maxRating: 5, iconHeight: 50),
+                            ],
+                          );
+                          break;
+
+                        case 2:
+                          stepWidget = Column(
+                            children: [
+                              Assets.images.postClass3.image(height: 50),
+                              10.verticalSpace,
+                              StarRating(rating: 1, maxRating: 5, iconHeight: 50),
+                              80.verticalSpace,
+                              Assets.images.postClass4.image(height: 50),
+                              10.verticalSpace,
+                              StarRating(rating: 1, maxRating: 5, iconHeight: 50),
+                            ],
+                          );
+                          break;
+
+                        case 3:
+                          stepWidget = Column(
+                            children: [
+                              Assets.images.mapMyIndia.image(height: 50),
+                              15.verticalSpace,
+
+                            ],
+                          );
+                          break;
+
+                        default:
+                          stepWidget = const SizedBox(); // fallback for safety
+                      }
+
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 40),
+                        child: stepWidget,
                       );
                     },
                   ),
@@ -103,22 +162,13 @@ class _PostClassReviewState extends State<PostClassReview> {
                 const SizedBox(height: 20),
 
                 // Next Button
-                SizedBox(
-                  width: double.infinity,
-                  height: 50,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFFDFFFFF),
-                      foregroundColor: Colors.black,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-                      elevation: 0,
-                    ),
-                    onPressed: _nextPage,
-                    child: Text(
-                      currentStep == totalSteps ? 'FINISH' : 'NEXT',
-                      style: GoogleFonts.montserrat(fontSize: 16, fontWeight: FontWeight.w600),
-                    ),
-                  ),
+                CustomButton(
+                  borderColor: AppColors.blackColor,
+                  fontSize: 18,
+                  onPressed: _nextPage,
+                  text: currentStep == totalSteps ? 'COMPLETE' : 'NEXT',
+                  backgroundColor: currentStep == totalSteps ? AppColors.green :AppColors.skyBlueLight,
+                  textColor: currentStep == totalSteps ? AppColors.whiteColor :AppColors.blackColor,
                 ),
                 const SizedBox(height: 40),
               ],

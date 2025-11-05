@@ -229,6 +229,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/map.png
   AssetGenImage get map => const AssetGenImage('assets/images/map.png');
 
+  /// File path: assets/images/map_my_india.png
+  AssetGenImage get mapMyIndia =>
+      const AssetGenImage('assets/images/map_my_india.png');
+
   /// File path: assets/images/our_courses.png
   AssetGenImage get ourCourses =>
       const AssetGenImage('assets/images/our_courses.png');
@@ -387,6 +391,7 @@ class $AssetsImagesGen {
     loginRegistration,
     loginRegistration2,
     map,
+    mapMyIndia,
     ourCourses,
     paymentWith,
     postClass1,

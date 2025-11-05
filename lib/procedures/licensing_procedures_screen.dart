@@ -1,14 +1,14 @@
 import 'package:drive_labs/components/context_extension.dart';
+import 'package:drive_labs/components/custom_button.dart';
 import 'package:drive_labs/constants/app_colours/app_colors.dart';
+import 'package:drive_labs/constants/strings.dart';
+import 'package:drive_labs/dashboard/dashboard_screen.dart';
+import 'package:drive_labs/gen/assets.gen.dart';
 import 'package:drive_labs/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'components/custom_button.dart';
-import 'constants/strings.dart';
-import 'dashboard/dashboard_screen.dart';
-import 'gen/assets.gen.dart';
 
 class LicensingProceduresScreen extends StatefulWidget {
   const LicensingProceduresScreen({super.key});

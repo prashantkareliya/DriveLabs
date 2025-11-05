@@ -1,15 +1,16 @@
 import 'package:drive_labs/components/context_extension.dart';
+import 'package:drive_labs/components/custom_button.dart';
+import 'package:drive_labs/components/custom_textField.dart';
+import 'package:drive_labs/constants/app_colours/app_colors.dart';
+import 'package:drive_labs/constants/strings.dart';
+import 'package:drive_labs/gen/assets.gen.dart';
 import 'package:drive_labs/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'choose_car_screen.dart';
-import 'components/custom_button.dart';
-import 'components/custom_textField.dart';
-import 'constants/app_colours/app_colors.dart';
-import 'constants/strings.dart';
-import 'gen/assets.gen.dart';
+
 
 class PaymentScreen extends StatefulWidget {
   const PaymentScreen({super.key});

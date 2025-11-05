@@ -1,10 +1,10 @@
 import 'package:drive_labs/constants/app_colours/app_colors.dart';
 import 'package:drive_labs/constants/strings.dart';
-import 'package:drive_labs/ragister_screen.dart';
+import 'package:drive_labs/auth/ragister_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'gen/assets.gen.dart';
+import '../gen/assets.gen.dart';
 import 'login_screen.dart';
 
 class LoginRegistrationScreen extends StatefulWidget {

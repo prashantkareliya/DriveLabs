@@ -1,14 +1,14 @@
 import 'package:drive_labs/main.dart';
-import 'package:drive_labs/program_screen.dart';
-import 'package:drive_labs/your_location_screen.dart';
+import 'package:drive_labs/procedures/program_screen.dart';
+import 'package:drive_labs/auth/your_location_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'components/custom_button.dart';
-import 'components/custom_textField.dart';
-import 'constants/app_colours/app_colors.dart';
-import 'constants/strings.dart';
-import 'gen/assets.gen.dart';
+import '../components/custom_button.dart';
+import '../components/custom_textField.dart';
+import '../constants/app_colours/app_colors.dart';
+import '../constants/strings.dart';
+import '../gen/assets.gen.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});

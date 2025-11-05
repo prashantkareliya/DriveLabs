@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'components/custom_button.dart';
-import 'gen/assets.gen.dart';
+import 'package:drive_labs/components/custom_button.dart';
+import 'package:drive_labs/gen/assets.gen.dart';
+import 'package:drive_labs/main.dart';
 import 'licensing_procedures_screen.dart';
-import 'main.dart';
 
 class ChooseCarScreen extends StatefulWidget {
   const ChooseCarScreen({super.key});

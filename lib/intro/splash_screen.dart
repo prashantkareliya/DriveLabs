@@ -1,11 +1,12 @@
-import 'package:drive_labs/intro_screens.dart';
-import 'package:drive_labs/login_registration_screen.dart';
+import 'package:drive_labs/Employee/emp_login.dart';
+import 'package:drive_labs/intro/intro_screens.dart';
+import 'package:drive_labs/auth/login_registration_screen.dart';
 import 'package:flutter/material.dart';
 
-import 'dashboard/dashboard_screen.dart';
-import 'dob_screen.dart';
-import 'gen/assets.gen.dart';
-import 'main.dart';
+import '../dashboard/dashboard_screen.dart';
+import '../auth/dob_screen.dart';
+import '../gen/assets.gen.dart';
+import '../main.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -22,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Future.delayed(Duration(seconds: 5), () {
       //navigationService.pushReplacement(IntroScreens());
-      navigationService.pushReplacement(DashboardScreen());
+      navigationService.pushReplacement(EmpLogin());
     });
   }
 

@@ -1,12 +1,12 @@
 import 'package:drive_labs/constants/app_colours/app_colors.dart';
-import 'package:drive_labs/your_location_screen.dart';
+import 'package:drive_labs/auth/your_location_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-import 'gen/assets.gen.dart';
+import '../gen/assets.gen.dart';
 import 'login_registration_screen.dart';
-import 'main.dart';
+import '../main.dart';
 
 class DOBScreen extends StatefulWidget {
   const DOBScreen({super.key});

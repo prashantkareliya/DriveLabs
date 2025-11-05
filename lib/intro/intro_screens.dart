@@ -3,8 +3,8 @@ import 'package:drive_labs/main.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import 'constants/strings.dart';
-import 'dob_screen.dart';
+import '../constants/strings.dart';
+import '../auth/dob_screen.dart';
 
 class IntroScreens extends StatefulWidget {
   const IntroScreens({super.key});

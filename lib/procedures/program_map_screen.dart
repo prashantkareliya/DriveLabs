@@ -1,10 +1,10 @@
 import 'package:drive_labs/components/context_extension.dart';
 import 'package:drive_labs/main.dart';
-import 'package:drive_labs/subscripation_screen.dart';
+import 'package:drive_labs/procedures/subscripation_screen.dart';
 import 'package:flutter/material.dart';
 
-import 'constants/app_colours/app_colors.dart';
-import 'gen/assets.gen.dart';
+import 'package:drive_labs/constants/app_colours/app_colors.dart';
+import 'package:drive_labs/gen/assets.gen.dart';
 
 class ProgramMapScreen extends StatefulWidget {
   const ProgramMapScreen({super.key});

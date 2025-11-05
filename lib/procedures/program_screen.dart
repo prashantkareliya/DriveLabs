@@ -1,14 +1,14 @@
 import 'package:drive_labs/components/context_extension.dart';
 import 'package:drive_labs/main.dart';
-import 'package:drive_labs/program_map_screen.dart';
+import 'package:drive_labs/procedures/program_map_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'components/custom_button.dart';
-import 'constants/app_colours/app_colors.dart';
-import 'constants/strings.dart';
-import 'gen/assets.gen.dart';
+import '../components/custom_button.dart';
+import '../constants/app_colours/app_colors.dart';
+import '../constants/strings.dart';
+import '../gen/assets.gen.dart';
 
 class ProgramScreen extends StatefulWidget {
   const ProgramScreen({super.key});
