@@ -11,11 +11,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'Employee/dash/emp_dashboard.dart';
 import 'Employee/emp_login.dart';
 import 'components/navigation_service.dart';
+import 'components/sharedPreferences_service.dart';
 import 'constants/app_colours/app_colors.dart';
 
 final NavigationService navigationService = NavigationService();
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await PreferenceService().init();
   runApp(MyApp());
 }
 
@@ -53,8 +56,9 @@ class SteeringLoadingIndicator extends StatefulWidget {
   final double size;
   final Duration rotationDuration;
   final TextStyle? textStyle;
+  bool? isShowText = false;
 
-  const SteeringLoadingIndicator({super.key, this.size = 80.0, this.rotationDuration = const Duration(seconds: 2), this.textStyle});
+  SteeringLoadingIndicator({super.key, this.size = 80.0, this.rotationDuration = const Duration(seconds: 2), this.textStyle, required this.isShowText});
 
   @override
   SteeringLoadingIndicatorState createState() => SteeringLoadingIndicatorState();
@@ -98,6 +102,7 @@ class SteeringLoadingIndicatorState extends State<SteeringLoadingIndicator> with
             child: Image.asset(ImageString.imgLoader, fit: BoxFit.contain),
           ),
         ),
+        if(widget.isShowText ?? false)
         Row(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.end,
@@ -130,7 +135,7 @@ class SteeringLoadingIndicatorState extends State<SteeringLoadingIndicator> with
               },
             ),
           ],
-        ),
+        )
       ],
     );
   }

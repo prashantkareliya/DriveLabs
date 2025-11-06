@@ -22,7 +22,7 @@ class CustomTextFormField extends StatelessWidget {
     this.validator,
     this.keyboardType = TextInputType.text,
     this.obscureText = false,
-    this.suffixIcon
+    this.suffixIcon,
   });
 
   @override
@@ -70,8 +70,15 @@ class CustomTextFormField extends StatelessWidget {
                 borderSide: BorderSide(color: AppColors.errorRed, width: 1.2),
                 borderRadius: BorderRadius.circular(16.0),
               ),
-                suffixIcon: suffixIcon
+              focusedErrorBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: AppColors.errorRed, width: 1.2),
+                borderRadius: BorderRadius.circular(16.0),
+              ),
+              suffixIcon: suffixIcon,
             ),
+            onTapOutside: (d) {
+              FocusScope.of(context).requestFocus(FocusNode());
+            },
           ),
         ),
         if (rightText != null) 4.verticalSpace,

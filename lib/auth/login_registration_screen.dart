@@ -1,6 +1,6 @@
 import 'package:drive_labs/constants/app_colours/app_colors.dart';
 import 'package:drive_labs/constants/strings.dart';
-import 'package:drive_labs/auth/ragister_screen.dart';
+import 'package:drive_labs/auth/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -8,7 +8,10 @@ import '../gen/assets.gen.dart';
 import 'login_screen.dart';
 
 class LoginRegistrationScreen extends StatefulWidget {
-  const LoginRegistrationScreen({super.key});
+  DateTime? selectedDay;
+  String? state, city, streetAddress, pinCode;
+
+  LoginRegistrationScreen(this.selectedDay, this.state,  this.city, this.streetAddress, this.pinCode, {super.key});
 
   @override
   State<LoginRegistrationScreen> createState() => _LoginRegistrationScreenState();
@@ -79,7 +82,7 @@ class _LoginRegistrationScreenState extends State<LoginRegistrationScreen> with 
               Expanded(
                 child: TabBarView(
                   physics: NeverScrollableScrollPhysics(),
-                    controller: _tabController, children: [LoginScreen(), RegisterScreen()]),
+                    controller: _tabController, children: [LoginScreen(), RegisterScreen(widget.selectedDay!, widget.state!, widget.city!, widget.streetAddress, widget.pinCode)]),
               ),
             ],
           ),

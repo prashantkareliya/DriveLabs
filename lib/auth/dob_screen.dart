@@ -1,5 +1,6 @@
 import 'package:drive_labs/constants/app_colours/app_colors.dart';
 import 'package:drive_labs/auth/your_location_screen.dart';
+import 'package:drive_labs/constants/helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -115,7 +116,11 @@ class _DOBScreenState extends State<DOBScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          navigationService.push(YourLocationScreen());
+          if(_selectedDay != null){
+            navigationService.push(YourLocationScreen(_selectedDay));
+          } else {
+            Helpers.showSnackBar(context, "Please select your date of birth date", isError: true);
+          }
         },
         backgroundColor: AppColors.black,
         child: Icon(Icons.start, color: AppColors.yellowColor, size: 30),

@@ -20,6 +20,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/arrow_down.svg
   SvgGenImage get arrowDown => const SvgGenImage('assets/icons/arrow_down.svg');
 
+  /// File path: assets/icons/arrow_next.svg
+  SvgGenImage get arrowNext => const SvgGenImage('assets/icons/arrow_next.svg');
+
   /// File path: assets/icons/arrow_right.png
   AssetGenImage get arrowRight =>
       const AssetGenImage('assets/icons/arrow_right.png');
@@ -94,6 +97,9 @@ class $AssetsIconsGen {
   SvgGenImage get starYellow =>
       const SvgGenImage('assets/icons/star_yellow.svg');
 
+  /// File path: assets/icons/stearing.svg
+  SvgGenImage get stearing => const SvgGenImage('assets/icons/stearing.svg');
+
   /// File path: assets/icons/three.svg
   SvgGenImage get three => const SvgGenImage('assets/icons/three.svg');
 
@@ -109,6 +115,7 @@ class $AssetsIconsGen {
   /// List of all assets
   List<dynamic> get values => [
     arrowDown,
+    arrowNext,
     arrowRight,
     arrowUp,
     empHome,
@@ -131,6 +138,7 @@ class $AssetsIconsGen {
     share,
     star,
     starYellow,
+    stearing,
     three,
     timer,
     two,
@@ -140,6 +148,10 @@ class $AssetsIconsGen {
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
+
+  /// File path: assets/images/cancel slot.png
+  AssetGenImage get cancelSlot =>
+      const AssetGenImage('assets/images/cancel slot.png');
 
   /// File path: assets/images/car_1.png
   AssetGenImage get car1 => const AssetGenImage('assets/images/car_1.png');
@@ -153,6 +165,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/choose_car_1.png
   AssetGenImage get chooseCar1 =>
       const AssetGenImage('assets/images/choose_car_1.png');
+
+  /// File path: assets/images/confirm_class.png
+  AssetGenImage get confirmClass =>
+      const AssetGenImage('assets/images/confirm_class.png');
 
   /// File path: assets/images/course_1.png
   AssetGenImage get course1 =>
@@ -177,6 +193,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/courses_text.png
   AssetGenImage get coursesText =>
       const AssetGenImage('assets/images/courses_text.png');
+
+  /// File path: assets/images/demo.png
+  AssetGenImage get demo => const AssetGenImage('assets/images/demo.png');
 
   /// File path: assets/images/dob.png
   AssetGenImage get dob => const AssetGenImage('assets/images/dob.png');
@@ -366,16 +385,19 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+    cancelSlot,
     car1,
     car2,
     car3,
     chooseCar1,
+    confirmClass,
     course1,
     course2,
     course3,
     course4,
     courseGiftCard,
     coursesText,
+    demo,
     dob,
     empBg,
     empBtmBg,

@@ -23,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Future.delayed(Duration(seconds: 5), () {
       //navigationService.pushReplacement(IntroScreens());
-      navigationService.pushReplacement(EmpLogin());
+      navigationService.pushReplacement(IntroScreens());
     });
   }
 
@@ -34,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
         alignment: Alignment.center,
         children: [
           Assets.images.intro1.image(fit: BoxFit.fill),
-          Positioned(bottom: 120, child: SteeringLoadingIndicator(size: 100)),
+          Positioned(bottom: 120, child: SteeringLoadingIndicator(size: 100, isShowText: true)),
         ],
       ),
     );

@@ -7,7 +7,9 @@ class ErrorString {
   static const String emailAddressErr = "ⓘ Please enter email address";
   static const String emailAddressValidErr = "ⓘ Please enter valid email address";
   static const String phoneErr = "ⓘ Please enter phone number";
+  static const String phoneValidErr = "ⓘ Please enter valid phone number";
   static const String passwordErr = "ⓘ Please enter password";
+  static const String confirmPasswordErr = "ⓘ Please enter confirm password";
   static const String passwordErr1 = "ⓘ Password & Confirm Password do not match";
   static const String hospitalErr = "ⓘ Please select hospital";
   static const String occupationErr = "ⓘ Select occupation";
@@ -28,6 +30,8 @@ class ErrorString {
   static const String employeeIdErr = "ⓘ Enter Employee ID";
   static const String notesErr = "ⓘ Enter Notes";
   static const String msgErr = "ⓘ Enter Message";
+  static const String addressErr = "ⓘ Please enter a primary street address";
+  static const String pinCodeErr = "ⓘ Please enter your area pin code";
 
 }
 //271828
@@ -55,7 +59,7 @@ class LabelString {
   static const String labelEnterConfirmPassword = 'Enter Confirm Password';
   static const String labelEnterYourPincode = 'Enter Your Pincode';
   static const String labelEnterPincode = 'Enter Pincode';
-  static const String labelFullAddress = 'Full Address';
+  static const String labelFullAddress = 'Address Line 1';
   static const String labelEnterFullAddress = 'Enter Full Address';
   static const String labelSubmit = 'Submit';
   static const String labelReferFriend = 'Refer a friend';
