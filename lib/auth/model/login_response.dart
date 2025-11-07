@@ -33,8 +33,8 @@ class User {
   String? phone;
   String? dateOfBirth;
   Address? address;
-  Null? course;
-  Null? courseId;
+  String? course;
+  String? courseId;
   String? certificate;
   String? photo;
   String? car;

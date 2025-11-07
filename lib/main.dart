@@ -1,15 +1,11 @@
 import 'dart:math';
 
 import 'package:drive_labs/constants/strings.dart';
-import 'package:drive_labs/procedures/program_map_screen.dart';
 import 'package:drive_labs/intro/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import 'Employee/dash/emp_dashboard.dart';
-import 'Employee/emp_login.dart';
 import 'components/navigation_service.dart';
 import 'components/sharedPreferences_service.dart';
 import 'constants/app_colours/app_colors.dart';
@@ -22,9 +18,22 @@ Future<void> main() async {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  final prefs = PreferenceService().prefs;
+  bool? hasSeenIntro;
+
+  @override
+  void initState() {
+    super.initState();
+    hasSeenIntro = prefs.getBool(PreferenceString.introSeen) ?? false;
+  }
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
@@ -47,7 +56,7 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: SplashScreen(),
+      child: SplashScreen(hasSeenIntro: hasSeenIntro),
     );
   }
 }
@@ -58,7 +67,13 @@ class SteeringLoadingIndicator extends StatefulWidget {
   final TextStyle? textStyle;
   bool? isShowText = false;
 
-  SteeringLoadingIndicator({super.key, this.size = 80.0, this.rotationDuration = const Duration(seconds: 2), this.textStyle, required this.isShowText});
+  SteeringLoadingIndicator({
+    super.key,
+    this.size = 80.0,
+    this.rotationDuration = const Duration(seconds: 2),
+    this.textStyle,
+    required this.isShowText,
+  });
 
   @override
   SteeringLoadingIndicatorState createState() => SteeringLoadingIndicatorState();
@@ -102,40 +117,40 @@ class SteeringLoadingIndicatorState extends State<SteeringLoadingIndicator> with
             child: Image.asset(ImageString.imgLoader, fit: BoxFit.contain),
           ),
         ),
-        if(widget.isShowText ?? false)
-        Row(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Text("Loading", style: textStyle),
-            SizedBox(width: 2),
-            AnimatedBuilder(
-              animation: _dotController,
-              builder: (_, __) {
-                final progress = _dotController.value * 3;
+        if (widget.isShowText ?? false)
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Text("Loading", style: textStyle),
+              SizedBox(width: 2),
+              AnimatedBuilder(
+                animation: _dotController,
+                builder: (_, __) {
+                  final progress = _dotController.value * 3;
 
-                return RichText(
-                  text: TextSpan(
-                    style: textStyle,
-                    children: List.generate(3, (index) {
-                      double opacity = ((progress - index).clamp(0.0, 1.0));
-                      if (opacity > 1.0) opacity = 0.0;
-                      return WidgetSpan(
-                        child: Opacity(
-                          opacity: opacity,
-                          child: const Text(
-                            '.',
-                            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.black),
+                  return RichText(
+                    text: TextSpan(
+                      style: textStyle,
+                      children: List.generate(3, (index) {
+                        double opacity = ((progress - index).clamp(0.0, 1.0));
+                        if (opacity > 1.0) opacity = 0.0;
+                        return WidgetSpan(
+                          child: Opacity(
+                            opacity: opacity,
+                            child: const Text(
+                              '.',
+                              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.black),
+                            ),
                           ),
-                        ),
-                      );
-                    }),
-                  ),
-                );
-              },
-            ),
-          ],
-        )
+                        );
+                      }),
+                    ),
+                  );
+                },
+              ),
+            ],
+          ),
       ],
     );
   }

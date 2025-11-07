@@ -11,7 +11,7 @@ class LoginRegistrationScreen extends StatefulWidget {
   DateTime? selectedDay;
   String? state, city, streetAddress, pinCode;
 
-  LoginRegistrationScreen(this.selectedDay, this.state,  this.city, this.streetAddress, this.pinCode, {super.key});
+  LoginRegistrationScreen({super.key, this.selectedDay, this.state,  this.city, this.streetAddress, this.pinCode});
 
   @override
   State<LoginRegistrationScreen> createState() => _LoginRegistrationScreenState();
@@ -23,7 +23,7 @@ class _LoginRegistrationScreenState extends State<LoginRegistrationScreen> with 
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 2, vsync: this); // Initialize TabController
+    _tabController = TabController(length: 2, vsync: this, initialIndex: (widget.streetAddress ?? "").isNotEmpty ? 1 : 0);
   }
 
   @override
@@ -82,7 +82,7 @@ class _LoginRegistrationScreenState extends State<LoginRegistrationScreen> with 
               Expanded(
                 child: TabBarView(
                   physics: NeverScrollableScrollPhysics(),
-                    controller: _tabController, children: [LoginScreen(), RegisterScreen(widget.selectedDay!, widget.state!, widget.city!, widget.streetAddress, widget.pinCode)]),
+                    controller: _tabController, children: [LoginScreen(), RegisterScreen(widget.selectedDay ?? DateTime.now(), widget.state ?? "", widget.city ?? "", widget.streetAddress ?? "", widget.pinCode ?? "")]),
               ),
             ],
           ),

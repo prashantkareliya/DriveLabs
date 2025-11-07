@@ -94,6 +94,8 @@ class _YourLocationScreenState extends State<YourLocationScreen> {
                         borderSide: BorderSide(color: AppColors.errorRed, width: 1.2),
                         borderRadius: BorderRadius.circular(16.0),
                       ),
+                      floatingLabelStyle: GoogleFonts.montserrat(fontSize: 15, color: AppColors.blackColor),
+                      hintStyle: GoogleFonts.montserrat(fontSize: 15, color: AppColors.blackColor),
                     ),
                   ),
 
@@ -113,11 +115,11 @@ class _YourLocationScreenState extends State<YourLocationScreen> {
                         } else {
                           navigationService.push(
                             LoginRegistrationScreen(
-                              widget.selectedDay,
-                              state.text,
-                              city.text,
-                              _locationController.text,
-                              _pinCodeController.text,
+                              selectedDay: widget.selectedDay,
+                              state: state.text,
+                              city: city.text,
+                              streetAddress: _locationController.text,
+                              pinCode: _pinCodeController.text,
                             ),
                           );
                         }

@@ -149,6 +149,33 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/0-1.png
+  AssetGenImage get a01 => const AssetGenImage('assets/images/0-1.png');
+
+  /// File path: assets/images/0-2.png
+  AssetGenImage get a02 => const AssetGenImage('assets/images/0-2.png');
+
+  /// File path: assets/images/1.png
+  AssetGenImage get a1 => const AssetGenImage('assets/images/1.png');
+
+  /// File path: assets/images/2.png
+  AssetGenImage get a2 => const AssetGenImage('assets/images/2.png');
+
+  /// File path: assets/images/3.png
+  AssetGenImage get a3 => const AssetGenImage('assets/images/3.png');
+
+  /// File path: assets/images/4.png
+  AssetGenImage get a4 => const AssetGenImage('assets/images/4.png');
+
+  /// File path: assets/images/5.png
+  AssetGenImage get a5 => const AssetGenImage('assets/images/5.png');
+
+  /// File path: assets/images/6.png
+  AssetGenImage get a6 => const AssetGenImage('assets/images/6.png');
+
+  /// File path: assets/images/7.png
+  AssetGenImage get a7 => const AssetGenImage('assets/images/7.png');
+
   /// File path: assets/images/cancel slot.png
   AssetGenImage get cancelSlot =>
       const AssetGenImage('assets/images/cancel slot.png');
@@ -385,6 +412,15 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+    a01,
+    a02,
+    a1,
+    a2,
+    a3,
+    a4,
+    a5,
+    a6,
+    a7,
     cancelSlot,
     car1,
     car2,

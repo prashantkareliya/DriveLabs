@@ -1,12 +1,12 @@
-class RegistrationResponse {
+class EmpLoginResponse {
   bool? error;
   String? message;
   User? user;
   String? token;
 
-  RegistrationResponse({this.error, this.message, this.user, this.token});
+  EmpLoginResponse({this.error, this.message, this.user, this.token});
 
-  RegistrationResponse.fromJson(Map<String, dynamic> json) {
+  EmpLoginResponse.fromJson(Map<String, dynamic> json) {
     error = json['error'];
     message = json['message'];
     user = json['user'] != null ? new User.fromJson(json['user']) : null;
@@ -26,120 +26,113 @@ class RegistrationResponse {
 }
 
 class User {
+  String? sId;
+  String? employeeId;
   String? name;
   String? role;
   String? email;
   String? phone;
   String? dateOfBirth;
-  String? level;
-  String? course;
-  String? courseId;
-  String? adhar;
+  Address? address;
   String? certificate;
   String? photo;
-  String? car;
-  String? sId;
-  AddressResponse? address;
-  /*List<Null>? rating;
-  List<Null>? session;*/
+  String? carAssigned;
+  int? experience;
+  List<String>? specialization;
+  //List<Null>? sessions;
   String? createdAt;
   String? updatedAt;
   int? iV;
+  String? adhar;
+  double? rating;
 
   User(
-      {this.name,
+      {this.sId,
+        this.employeeId,
+        this.name,
         this.role,
         this.email,
         this.phone,
         this.dateOfBirth,
-        this.level,
-        this.course,
-        this.courseId,
-        this.adhar,
+        this.address,
         this.certificate,
         this.photo,
-        this.car,
-        this.sId,
-        this.address,
-        /*this.rating,
-        this.session,*/
+        this.carAssigned,
+        this.experience,
+        this.specialization,
+       // this.sessions,
         this.createdAt,
         this.updatedAt,
-        this.iV});
+        this.iV,
+        this.adhar,
+        this.rating});
 
   User.fromJson(Map<String, dynamic> json) {
+    sId = json['_id'];
+    employeeId = json['employeeId'];
     name = json['name'];
     role = json['role'];
     email = json['email'];
     phone = json['phone'];
     dateOfBirth = json['dateOfBirth'];
-    level = json['level'];
-    course = json['course'];
-    courseId = json['courseId'];
-    adhar = json['adhar'];
+    address =
+    json['address'] != null ? new Address.fromJson(json['address']) : null;
     certificate = json['certificate'];
     photo = json['photo'];
-    car = json['car'];
-    sId = json['_id'];
-    address =
-    json['address'] != null ? new AddressResponse.fromJson(json['address']) : null;
-    /*if (json['rating'] != null) {
-      rating = <Null>[];
-      json['rating'].forEach((v) {
-        rating!.add(new Null.fromJson(v));
-      });
-    }
-    if (json['session'] != null) {
-      session = <Null>[];
-      json['session'].forEach((v) {
-        session!.add(new Null.fromJson(v));
+    carAssigned = json['carAssigned'];
+    experience = json['experience'];
+    specialization = json['specialization'].cast<String>();
+    /*if (json['sessions'] != null) {
+      sessions = <Null>[];
+      json['sessions'].forEach((v) {
+        sessions!.add(new Null.fromJson(v));
       });
     }*/
     createdAt = json['createdAt'];
     updatedAt = json['updatedAt'];
     iV = json['__v'];
+    adhar = json['adhar'];
+    rating = json['rating'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
+    data['_id'] = sId;
+    data['employeeId'] = employeeId;
     data['name'] = name;
     data['role'] = role;
     data['email'] = email;
     data['phone'] = phone;
     data['dateOfBirth'] = dateOfBirth;
-    data['level'] = level;
-    data['course'] = course;
-    data['courseId'] = courseId;
-    data['adhar'] = adhar;
-    data['certificate'] = certificate;
-    data['photo'] = photo;
-    data['car'] = car;
-    data['_id'] = sId;
     if (address != null) {
       data['address'] = address!.toJson();
     }
-    /*if (this.rating != null) {
-      data['rating'] = this.rating!.map((v) => v.toJson()).toList();
-    }
-    if (this.session != null) {
-      data['session'] = this.session!.map((v) => v.toJson()).toList();
+    data['certificate'] = certificate;
+    data['photo'] = photo;
+    data['carAssigned'] = carAssigned;
+    data['experience'] = experience;
+    data['specialization'] = specialization;
+   /* if (this.sessions != null) {
+      data['sessions'] = this.sessions!.map((v) => v.toJson()).toList();
     }*/
     data['createdAt'] = createdAt;
     data['updatedAt'] = updatedAt;
     data['__v'] = iV;
+    data['adhar'] = adhar;
+    data['rating'] = rating;
     return data;
   }
 }
 
-class AddressResponse {
+class Address {
   String? street;
   String? city;
   String? state;
   String? pincode;
 
-  AddressResponse({this.street, this.city, this.state, this.pincode});
+  Address({this.street, this.city, this.state, this.pincode});
 
-  AddressResponse.fromJson(Map<String, dynamic> json) {
+  Address.fromJson(Map<String, dynamic> json) {
     street = json['street'];
     city = json['city'];
     state = json['state'];

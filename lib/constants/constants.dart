@@ -32,7 +32,13 @@ class ApiEndPoint {
   static const String loginUser = "customer/login";
   static const String registerUser = "customer/signup";
 
+
+  //Instructor
+  static const String loginEmp = "instructor/login";
+
   //DELETE API endpoint
 
   //GET API endpoint
+  static const String getAllCourse = "courses/GetAll";
+
 }

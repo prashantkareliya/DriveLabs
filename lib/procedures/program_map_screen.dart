@@ -32,7 +32,7 @@ class _ProgramMapScreenState extends State<ProgramMapScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          navigationService.push(SubscriptionScreen());
+          //navigationService.push(SubscriptionScreen());
         },
         backgroundColor: AppColors.black,
         child: Icon(Icons.start, color: AppColors.yellowColor, size: 30),

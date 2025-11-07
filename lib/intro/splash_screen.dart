@@ -1,15 +1,15 @@
-import 'package:drive_labs/Employee/emp_login.dart';
+import 'package:drive_labs/Employee/login/emp_login.dart';
+import 'package:drive_labs/auth/dob_screen.dart';
 import 'package:drive_labs/intro/intro_screens.dart';
-import 'package:drive_labs/auth/login_registration_screen.dart';
 import 'package:flutter/material.dart';
 
-import '../dashboard/dashboard_screen.dart';
-import '../auth/dob_screen.dart';
-import '../gen/assets.gen.dart';
-import '../main.dart';
+import 'package:drive_labs/gen/assets.gen.dart';
+import 'package:drive_labs/main.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+  bool? hasSeenIntro;
+
+  SplashScreen({super.key, required this.hasSeenIntro});
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
@@ -21,10 +21,16 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 5), () {
-      //navigationService.pushReplacement(IntroScreens());
-      navigationService.pushReplacement(IntroScreens());
-    });
+    if (widget.hasSeenIntro ?? false) {
+      Future.delayed(Duration(seconds: 5), () {
+        //navigationService.pushReplacement(DOBScreen());
+        navigationService.pushReplacement(EmpLogin());
+      });
+    } else {
+      Future.delayed(Duration(seconds: 5), () {
+        navigationService.pushReplacement(IntroScreens());
+      });
+    }
   }
 
   @override

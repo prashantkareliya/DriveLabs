@@ -3,6 +3,7 @@ import 'package:drive_labs/auth/data/auth_datasource.dart';
 import 'package:drive_labs/auth/data/auth_repository.dart';
 import 'package:drive_labs/auth/model/registration_request.dart';
 import 'package:drive_labs/components/context_extension.dart';
+import 'package:drive_labs/components/custom_loading_wrapper.dart';
 import 'package:drive_labs/components/sharedPreferences_service.dart';
 import 'package:drive_labs/constants/helpers.dart';
 import 'package:drive_labs/main.dart';
@@ -70,149 +71,151 @@ class _RegisterScreenState extends State<RegisterScreen> {
           }
         },
         builder: (context, state) {
-          return SingleChildScrollView(
-            child: Container(
-              decoration: BoxDecoration(
-                color: AppColors.whiteColor.withValues(alpha: 0.6),
-                borderRadius: BorderRadius.only(topLeft: Radius.circular(16), topRight: Radius.circular(30)),
-              ),
-              child: Form(
-                key: _formKey,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 18.0),
-                  child: Column(
-                    children: [
-                      8.verticalSpace,
-                      CustomTextFormField(
-                        label: LabelString.labelFullName,
-                        hintText: LabelString.labelEnterFullName,
-                        controller: _nameController,
-                        keyboardType: TextInputType.name,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return ErrorString.fullNameErr;
-                          }
-                          return null;
-                        },
-                      ),
-                      CustomTextFormField(
-                        label: LabelString.labelEmail,
-                        hintText: LabelString.labelEnterEmail,
-                        controller: _emailController,
-                        keyboardType: TextInputType.emailAddress,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return ErrorString.emailAddressErr;
-                          }
+          return LoadingWrapper(
+            showSpinner: showSpinner,
+            child: SingleChildScrollView(
+              child: Container(
+                decoration: BoxDecoration(
+                  color: AppColors.whiteColor.withValues(alpha: 0.6),
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(16), topRight: Radius.circular(30)),
+                ),
+                child: Form(
+                  key: _formKey,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 18.0),
+                    child: Column(
+                      children: [
+                        8.verticalSpace,
+                        CustomTextFormField(
+                          label: LabelString.labelFullName,
+                          hintText: LabelString.labelEnterFullName,
+                          controller: _nameController,
+                          keyboardType: TextInputType.name,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return ErrorString.fullNameErr;
+                            }
+                            return null;
+                          },
+                        ),
+                        CustomTextFormField(
+                          label: LabelString.labelEmail,
+                          hintText: LabelString.labelEnterEmail,
+                          controller: _emailController,
+                          keyboardType: TextInputType.emailAddress,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return ErrorString.emailAddressErr;
+                            }
 
-                          if (!_emailController.text.isValidEmail) {
-                            return ErrorString.emailAddressValidErr;
-                          }
-                          return null;
-                        },
-                      ),
-                      CustomTextFormField(
-                        label: LabelString.labelPhoneNumber,
-                        hintText: LabelString.labelEnterPhoneNumber,
-                        controller: _phoneController,
-                        keyboardType: TextInputType.number,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return ErrorString.phoneErr;
-                          }
-                          if (_phoneController.text.isValidPhone) {
-                            return ErrorString.phoneValidErr;
-                          }
-                          return null;
-                        },
-                      ),
-                      ValueListenableBuilder<bool>(
-                        valueListenable: _obscureTextNotifierNew,
-                        builder: (BuildContext context, bool isObscured, Widget? child) {
-                          return CustomTextFormField(
-                            label: LabelString.labelPassword,
-                            hintText: LabelString.labelEnterPassword,
-                            controller: _passwordController,
-                            keyboardType: TextInputType.text,
-                            obscureText: isObscured,
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return ErrorString.passwordErr;
-                              }
-                              return null;
-                            },
-                            suffixIcon: Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                              child: GestureDetector(
-                                onTap: () {
-                                  _obscureTextNotifierNew.value = !isObscured;
-                                },
-                                child: Icon(
-                                  Icons.remove_red_eye_rounded,
-                                  color: isObscured ? Color(0xFF2A8D5C) : Color(0xFF2A8D5C).withValues(alpha: 0.5),
+                            if (!_emailController.text.isValidEmail) {
+                              return ErrorString.emailAddressValidErr;
+                            }
+                            return null;
+                          },
+                        ),
+                        CustomTextFormField(
+                          label: LabelString.labelPhoneNumber,
+                          hintText: LabelString.labelEnterPhoneNumber,
+                          controller: _phoneController,
+                          keyboardType: TextInputType.number,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return ErrorString.phoneErr;
+                            }
+                            if (!_phoneController.text.isValidPhone) {
+                              return ErrorString.phoneValidErr;
+                            }
+                            return null;
+                          },
+                        ),
+                        ValueListenableBuilder<bool>(
+                          valueListenable: _obscureTextNotifierNew,
+                          builder: (BuildContext context, bool isObscured, Widget? child) {
+                            return CustomTextFormField(
+                              label: LabelString.labelPassword,
+                              hintText: LabelString.labelEnterPassword,
+                              controller: _passwordController,
+                              keyboardType: TextInputType.text,
+                              obscureText: isObscured,
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return ErrorString.passwordErr;
+                                }
+                                return null;
+                              },
+                              suffixIcon: Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    _obscureTextNotifierNew.value = !isObscured;
+                                  },
+                                  child: Icon(
+                                    Icons.remove_red_eye_rounded,
+                                    color: isObscured ? Color(0xFF2A8D5C) : Color(0xFF2A8D5C).withValues(alpha: 0.5),
+                                  ),
                                 ),
                               ),
-                            ),
-                          );
-                        },
-                      ),
-                      ValueListenableBuilder<bool>(
-                        valueListenable: _obscureTextNotifierConfirm,
-                        builder: (BuildContext context, bool isObscured, Widget? child) {
-                          return CustomTextFormField(
-                            label: LabelString.labelConfirmPassword,
-                            hintText: LabelString.labelEnterConfirmPassword,
-                            controller: _confirmPasswordController,
-                            keyboardType: TextInputType.text,
-                            obscureText: isObscured,
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return ErrorString.confirmPasswordErr;
-                              }
-                              if (value != _passwordController.text) {
-                                return ErrorString.passwordErr1;
-                              }
-                              return null;
-                            },
-                            suffixIcon: Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                              child: GestureDetector(
-                                onTap: () {
-                                  _obscureTextNotifierConfirm.value = !isObscured;
-                                },
-                                child: Icon(
-                                  Icons.remove_red_eye_rounded,
-                                  color: isObscured ? Color(0xFF2A8D5C) : Color(0xFF2A8D5C).withValues(alpha: 0.5),
+                            );
+                          },
+                        ),
+                        ValueListenableBuilder<bool>(
+                          valueListenable: _obscureTextNotifierConfirm,
+                          builder: (BuildContext context, bool isObscured, Widget? child) {
+                            return CustomTextFormField(
+                              label: LabelString.labelConfirmPassword,
+                              hintText: LabelString.labelEnterConfirmPassword,
+                              controller: _confirmPasswordController,
+                              keyboardType: TextInputType.text,
+                              obscureText: isObscured,
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return ErrorString.confirmPasswordErr;
+                                }
+                                if (value != _passwordController.text) {
+                                  return ErrorString.passwordErr1;
+                                }
+                                return null;
+                              },
+                              suffixIcon: Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    _obscureTextNotifierConfirm.value = !isObscured;
+                                  },
+                                  child: Icon(
+                                    Icons.remove_red_eye_rounded,
+                                    color: isObscured ? Color(0xFF2A8D5C) : Color(0xFF2A8D5C).withValues(alpha: 0.5),
+                                  ),
                                 ),
                               ),
-                            ),
-                          );
-                        },
-                      ),
-                      14.verticalSpace,
-                      CustomButton(
-                        text: LabelString.labelStartLearning,
-                        backgroundColor: AppColors.yellowColor,
-                        textColor: AppColors.blackColor,
-                        onPressed: () {
-                          //navigationService.push(ProgramScreen());
-                          if (_formKey.currentState!.validate()) {
-                            callAPI();
-                          }
-                        },
-                        borderColor: AppColors.blackColor,
-                      ),
-                      14.verticalSpace,
-                      CustomButton(
-                        text: LabelString.labelSignInWith,
-                        leadingIcon: Assets.images.googleImg.image(height: 22),
-                        backgroundColor: AppColors.whiteColor,
-                        textColor: AppColors.blackColor,
-                        onPressed: () {},
-                        borderColor: AppColors.blackColor,
-                      ),
-                      25.verticalSpace,
-                    ],
+                            );
+                          },
+                        ),
+                        14.verticalSpace,
+                        CustomButton(
+                          text: LabelString.labelStartLearning,
+                          backgroundColor: AppColors.yellowColor,
+                          textColor: AppColors.blackColor,
+                          onPressed: () {
+                            if (_formKey.currentState!.validate()) {
+                              callAPI();
+                            }
+                          },
+                          borderColor: AppColors.blackColor,
+                        ),
+                        14.verticalSpace,
+                        CustomButton(
+                          text: LabelString.labelSignInWith,
+                          leadingIcon: Assets.images.googleImg.image(height: 22),
+                          backgroundColor: AppColors.whiteColor,
+                          textColor: AppColors.blackColor,
+                          onPressed: () {},
+                          borderColor: AppColors.blackColor,
+                        ),
+                        25.verticalSpace,
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -233,6 +236,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
       dateOfBirth: widget.dob.toString(),
     );
     print(registrationRequest);
-    //authBloc.add(RegistrationEvent(registrationRequest));
+    authBloc.add(RegistrationEvent(registrationRequest));
   }
 }

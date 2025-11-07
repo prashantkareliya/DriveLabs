@@ -118,6 +118,7 @@ class PreferenceString {
   static const String prefsName = "name";
   static const String prefsPhone = "phone";
   static const String userResponse = "userData";
+  static const String introSeen = "intro_seen";
   //static const String userRole = "userRole";
 }
 

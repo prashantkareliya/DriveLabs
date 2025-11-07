@@ -1,4 +1,4 @@
-import 'package:drive_labs/Employee/emp_login.dart';
+import 'package:drive_labs/Employee/login/emp_login.dart';
 import 'package:drive_labs/auth/bloc/auth_bloc.dart';
 import 'package:drive_labs/auth/data/auth_datasource.dart';
 import 'package:drive_labs/auth/data/auth_repository.dart';
@@ -70,7 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
             if (user != null) {
               prefs.setString(PreferenceString.prefsUserId, user?.user?.sId ?? "");
               prefs.setString(PreferenceString.prefsToken, user?.token ?? "");
-              navigationService.push(DashboardScreen());
+              navigationService.push(ProgramScreen());
             }
           }
         },

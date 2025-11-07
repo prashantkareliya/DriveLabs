@@ -44,7 +44,7 @@ class HttpActions {
         headers ?? {},
         prefs.getString(PreferenceString.prefsToken),
       );
-
+      debugPrint("URL -- ${endPoint + url}");
       http.Response response = await http.get(
         Uri.parse(endPoint + url),
         headers: headers,

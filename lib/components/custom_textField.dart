@@ -53,7 +53,7 @@ class CustomTextFormField extends StatelessWidget {
             validator: validator,
             keyboardType: keyboardType,
             obscureText: obscureText,
-            style: GoogleFonts.montserrat(fontSize: 15, color: Colors.black),
+            style: GoogleFonts.montserrat(fontSize: 15, color: AppColors.blackColor),
             decoration: InputDecoration(
               hintText: hintText,
               hintStyle: GoogleFonts.montserrat(color: Colors.grey, fontSize: 16),

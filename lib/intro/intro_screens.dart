@@ -1,3 +1,4 @@
+import 'package:drive_labs/components/sharedPreferences_service.dart';
 import 'package:drive_labs/constants/app_colours/app_colors.dart';
 import 'package:drive_labs/main.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +15,7 @@ class IntroScreens extends StatefulWidget {
 }
 
 class _IntroScreensState extends State<IntroScreens> {
+  final prefs = PreferenceService().prefs;
   final PageController _pageController = PageController();
   int _currentPage = 0;
 
@@ -62,7 +64,8 @@ class _IntroScreensState extends State<IntroScreens> {
       ),
       floatingActionButton: _currentPage > introData.length - 2
           ? FloatingActionButton(
-              onPressed: () {
+              onPressed: () async {
+                await prefs.setBool(PreferenceString.introSeen, true);
                 navigationService.pushReplacement(DOBScreen());
               },
               backgroundColor: AppColors.black,
