@@ -74,6 +74,7 @@ class LabelString {
   static const String labelNext = 'Next';
   static const String labelLicensingProcedures = 'Licensing Procedures';
   static const String labelProceed = 'Proceed';
+  static const String labelAddComments = 'Add Comments';
 
 ///Emp
   static const String labelEmployeeID = 'EmployeeID';

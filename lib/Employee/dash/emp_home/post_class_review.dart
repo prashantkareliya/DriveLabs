@@ -1,7 +1,9 @@
 import 'package:drive_labs/Employee/dash/emp_home/student_detail.dart';
 import 'package:drive_labs/components/context_extension.dart';
 import 'package:drive_labs/components/custom_button.dart';
+import 'package:drive_labs/components/custom_textField.dart';
 import 'package:drive_labs/constants/app_colours/app_colors.dart';
+import 'package:drive_labs/constants/strings.dart';
 import 'package:drive_labs/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,6 +21,13 @@ class _PostClassReviewState extends State<PostClassReview> {
   final int totalSteps = 4;
   int currentStep = 1;
 
+  int _carControlRating = 0;
+  int _roadSenseRating = 0;
+  int _trafficRulesRating = 0;
+  int _maneuversRating = 0;
+  int _spatialAwarenessRating = 0;
+  int _defensiveDrivingRating = 0;
+
   @override
   void dispose() {
     _pageController.dispose();
@@ -29,7 +38,6 @@ class _PostClassReviewState extends State<PostClassReview> {
     if (currentStep < totalSteps) {
       _pageController.nextPage(duration: const Duration(milliseconds: 400), curve: Curves.easeInOut);
     } else {
-      // You can navigate to another screen or reset
       _pageController.jumpToPage(0);
     }
   }
@@ -40,32 +48,29 @@ class _PostClassReviewState extends State<PostClassReview> {
 
     return Scaffold(
       backgroundColor: AppColors.transparent,
-
       body: Stack(
         children: [
           Assets.images.programBg.image(width: context.width(), fit: BoxFit.fill),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 18.0),
+            padding: const EdgeInsets.symmetric(horizontal: 18.0),
             child: Column(
               children: [
-                35.verticalSpace,
+                30.verticalSpace,
                 Assets.images.postClass.image(width: context.width(), fit: BoxFit.cover),
-                20.verticalSpace,
+                10.verticalSpace,
                 Text(
                   'SESSION COMPLETION\nREQUIRED',
                   textAlign: TextAlign.center,
                   style: GoogleFonts.montserrat(fontSize: 20, fontWeight: FontWeight.w700, color: Colors.black87),
                 ),
-                20.verticalSpace,
+                10.verticalSpace,
 
-                // Step Text
                 Text(
                   '$currentStep/$totalSteps',
                   style: GoogleFonts.montserrat(fontSize: 16, fontWeight: FontWeight.bold, color: AppColors.green),
                 ),
 
-                12.verticalSpace,
-                // Progress Bar
+                10.verticalSpace,
                 Container(
                   decoration: BoxDecoration(
                     color: AppColors.whiteColor,
@@ -80,9 +85,6 @@ class _PostClassReviewState extends State<PostClassReview> {
                     color: AppColors.green,
                   ),
                 ),
-
-                40.verticalSpace,
-
                 Expanded(
                   child: PageView.builder(
                     controller: _pageController,
@@ -100,11 +102,17 @@ class _PostClassReviewState extends State<PostClassReview> {
                             children: [
                               Assets.images.postClass6.image(height: 50),
                               10.verticalSpace,
-                              StarRating(rating: 1, maxRating: 5, iconHeight: 50),
+                              StarRating(
+                                onRatingChanged: (rating) => setState(() => _carControlRating = rating),
+                                initialRating: _carControlRating,
+                              ),
                               80.verticalSpace,
                               Assets.images.postClass1.image(height: 50),
                               10.verticalSpace,
-                              StarRating(rating: 1, maxRating: 5, iconHeight: 50),
+                              StarRating(
+                                onRatingChanged: (rating) => setState(() => _roadSenseRating = rating),
+                                initialRating: _roadSenseRating,
+                              ),
                             ],
                           );
                           break;
@@ -114,11 +122,17 @@ class _PostClassReviewState extends State<PostClassReview> {
                             children: [
                               Assets.images.postClass2.image(height: 50),
                               10.verticalSpace,
-                              StarRating(rating: 1, maxRating: 5, iconHeight: 50),
+                              StarRating(
+                                onRatingChanged: (rating) => setState(() => _trafficRulesRating = rating),
+                                initialRating: _trafficRulesRating,
+                              ),
                               80.verticalSpace,
                               Assets.images.postClass5.image(height: 50),
                               10.verticalSpace,
-                              StarRating(rating: 1, maxRating: 5, iconHeight: 50),
+                              StarRating(
+                                onRatingChanged: (rating) => setState(() => _maneuversRating = rating),
+                                initialRating: _maneuversRating,
+                              ),
                             ],
                           );
                           break;
@@ -128,22 +142,79 @@ class _PostClassReviewState extends State<PostClassReview> {
                             children: [
                               Assets.images.postClass3.image(height: 50),
                               10.verticalSpace,
-                              StarRating(rating: 1, maxRating: 5, iconHeight: 50),
+                              StarRating(
+                                onRatingChanged: (rating) => setState(() => _spatialAwarenessRating = rating),
+                                initialRating: _spatialAwarenessRating,
+                              ),
                               80.verticalSpace,
                               Assets.images.postClass4.image(height: 50),
                               10.verticalSpace,
-                              StarRating(rating: 1, maxRating: 5, iconHeight: 50),
+                              StarRating(
+                                onRatingChanged: (rating) => setState(() => _defensiveDrivingRating = rating),
+                                initialRating: _defensiveDrivingRating,
+                              ),
                             ],
                           );
                           break;
 
                         case 3:
-                          stepWidget = Column(
-                            children: [
-                              Assets.images.mapMyIndia.image(height: 50),
-                              15.verticalSpace,
-
-                            ],
+                          stepWidget = SingleChildScrollView(
+                            child: Column(
+                              children: [
+                                Assets.images.mapMyIndia.image(height: 50),
+                                25.verticalSpace,
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Assets.icons.timer.svg(),
+                                    const SizedBox(width: 16),
+                                    Text(
+                                      '00:30:00',
+                                      style: GoogleFonts.montserrat(
+                                        fontSize: 32,
+                                        fontWeight: FontWeight.bold,
+                                        color: AppColors.blackColor,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                10.verticalSpace,
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Assets.icons.routeBlack.svg(height: 50),
+                                    const SizedBox(width: 55),
+                                    Text(
+                                      '7 kms',
+                                      style: GoogleFonts.montserrat(
+                                        fontSize: 32,
+                                        fontWeight: FontWeight.bold,
+                                        color: AppColors.blackColor,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                10.verticalSpace,
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Assets.icons.stearing.svg(height: 50),
+                                    const SizedBox(width: 16),
+                                    Text(
+                                      '21 km/hr',
+                                      style: GoogleFonts.montserrat(
+                                        fontSize: 32,
+                                        fontWeight: FontWeight.bold,
+                                        color: AppColors.blackColor,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                15.verticalSpace,
+                                CustomTextFormField(label: LabelString.labelAddComments, hintText: "Write Here", maxLines: 4),
+                              ],
+                            ),
                           );
                           break;
 
@@ -151,15 +222,10 @@ class _PostClassReviewState extends State<PostClassReview> {
                           stepWidget = const SizedBox(); // fallback for safety
                       }
 
-                      return Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 40),
-                        child: stepWidget,
-                      );
+                      return Padding(padding: const EdgeInsets.symmetric(vertical: 40), child: stepWidget);
                     },
                   ),
                 ),
-
-                const SizedBox(height: 20),
 
                 // Next Button
                 CustomButton(
@@ -167,8 +233,8 @@ class _PostClassReviewState extends State<PostClassReview> {
                   fontSize: 18,
                   onPressed: _nextPage,
                   text: currentStep == totalSteps ? 'COMPLETE' : 'NEXT',
-                  backgroundColor: currentStep == totalSteps ? AppColors.green :AppColors.skyBlueLight,
-                  textColor: currentStep == totalSteps ? AppColors.whiteColor :AppColors.blackColor,
+                  backgroundColor: currentStep == totalSteps ? AppColors.green : AppColors.skyBlueLight,
+                  textColor: currentStep == totalSteps ? AppColors.whiteColor : AppColors.blackColor,
                 ),
                 const SizedBox(height: 40),
               ],
@@ -176,6 +242,65 @@ class _PostClassReviewState extends State<PostClassReview> {
           ),
         ],
       ),
+    );
+  }
+}
+
+class StarRating extends StatefulWidget {
+  final int maxRating;
+  final Function(int) onRatingChanged;
+  final double iconHeight;
+  final int initialRating;
+
+  const StarRating({super.key, this.maxRating = 5, required this.onRatingChanged, this.iconHeight = 50, this.initialRating = 0});
+
+  @override
+  State<StarRating> createState() => _StarRatingState();
+}
+
+class _StarRatingState extends State<StarRating> {
+  late int _currentRating;
+
+  @override
+  void initState() {
+    super.initState();
+    _currentRating = widget.initialRating;
+  }
+
+  @override
+  void didUpdateWidget(covariant StarRating oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.initialRating != _currentRating) {
+      setState(() {
+        _currentRating = widget.initialRating;
+      });
+    }
+  }
+
+  Widget _buildStar(int index) {
+    final isSelected = index < _currentRating;
+    return GestureDetector(
+      onTap: () {
+        final newRating = index + 1;
+        setState(() {
+          _currentRating = newRating;
+        });
+        widget.onRatingChanged(newRating);
+        print(_currentRating);
+      },
+      child: isSelected
+          ? Assets.icons.starYellow.svg(height: widget.iconHeight)
+          : Assets.icons.star.svg(height: widget.iconHeight),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: List.generate(widget.maxRating, (index) {
+        return Padding(padding: const EdgeInsets.symmetric(horizontal: 4.0), child: _buildStar(index));
+      }),
     );
   }
 }

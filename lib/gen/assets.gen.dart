@@ -84,6 +84,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/route.svg
   SvgGenImage get route => const SvgGenImage('assets/icons/route.svg');
 
+  /// File path: assets/icons/route_black.svg
+  SvgGenImage get routeBlack =>
+      const SvgGenImage('assets/icons/route_black.svg');
+
   /// File path: assets/icons/setting.svg
   SvgGenImage get setting => const SvgGenImage('assets/icons/setting.svg');
 
@@ -134,6 +138,7 @@ class $AssetsIconsGen {
     phone1,
     phonePay,
     route,
+    routeBlack,
     setting,
     share,
     star,

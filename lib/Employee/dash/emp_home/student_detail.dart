@@ -71,12 +71,20 @@ class _StudentDetailState extends State<StudentDetail> {
                               children: [
                                 Text(
                                   'Felix Daugherty',
-                                  style: GoogleFonts.montserrat(fontSize: 18, fontWeight: FontWeight.bold, color: AppColors.blackColor),
+                                  style: GoogleFonts.montserrat(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                    color: AppColors.blackColor,
+                                  ),
                                 ),
 
                                 Text(
                                   '6:30 AM - 7:20 AM',
-                                  style: GoogleFonts.montserrat(fontSize: 14, fontWeight: FontWeight.w600, color: AppColors.blackColor),
+                                  style: GoogleFonts.montserrat(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600,
+                                    color: AppColors.blackColor,
+                                  ),
                                 ),
                               ],
                             ),
@@ -163,7 +171,7 @@ class _StudentDetailState extends State<StudentDetail> {
                       ),
                       8.verticalSpace,
 
-                      StarRating(rating: 4),
+                      StarRatingForStudentDetail(rating: 4),
                     ],
                   ),
                 ),
@@ -183,11 +191,19 @@ class _StudentDetailState extends State<StudentDetail> {
                           children: [
                             Text(
                               "Parameters",
-                              style: GoogleFonts.montserrat(fontSize: 16, fontWeight: FontWeight.w600, color: AppColors.blackColor),
+                              style: GoogleFonts.montserrat(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                                color: AppColors.blackColor,
+                              ),
                             ),
                             Text(
                               "Average Rating",
-                              style: GoogleFonts.montserrat(fontSize: 16, fontWeight: FontWeight.w600, color: AppColors.blackColor),
+                              style: GoogleFonts.montserrat(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                                color: AppColors.blackColor,
+                              ),
                             ),
                           ],
                         ),
@@ -202,9 +218,13 @@ class _StudentDetailState extends State<StudentDetail> {
                               children: [
                                 Text(
                                   param["label"],
-                                  style: GoogleFonts.montserrat(fontSize: 18, fontWeight: FontWeight.w700, color: AppColors.blackColor),
+                                  style: GoogleFonts.montserrat(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w700,
+                                    color: AppColors.blackColor,
+                                  ),
                                 ),
-                                StarRating(rating: param["rating"]),
+                                StarRatingForStudentDetail(rating: param["rating"]),
                               ],
                             ),
                           ),
@@ -222,11 +242,12 @@ class _StudentDetailState extends State<StudentDetail> {
   }
 }
 
-class StarRating extends StatelessWidget {
+class StarRatingForStudentDetail extends StatelessWidget {
   final int rating;
   final int maxRating;
   final double iconHeight;
-  const StarRating({super.key, required this.rating, this.maxRating = 5, this.iconHeight = 25});
+
+  const StarRatingForStudentDetail({super.key, required this.rating, this.maxRating = 5, this.iconHeight = 25});
 
   @override
   Widget build(BuildContext context) {
@@ -234,7 +255,10 @@ class StarRating extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: List.generate(maxRating, (index) {
         return index < rating
-            ? Padding(padding: EdgeInsets.symmetric(horizontal: 4.0, vertical: 1), child: Assets.icons.starYellow.svg(height: iconHeight))
+            ? Padding(
+                padding: EdgeInsets.symmetric(horizontal: 4.0, vertical: 1),
+                child: Assets.icons.starYellow.svg(height: iconHeight),
+              )
             : Assets.icons.star.svg(height: iconHeight);
       }),
     );

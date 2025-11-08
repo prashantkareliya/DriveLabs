@@ -11,6 +11,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
+import 'choose_car_screen.dart';
+
 class SubscriptionScreen extends StatefulWidget {
   Courses? course;
 
@@ -166,7 +168,9 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                     backgroundColor: AppColors.redButtonColor,
                     textColor: AppColors.whiteColor,
                     trailingIcon: Icon(Icons.phone, color: AppColors.whiteColor),
-                    onPressed: () {},
+                    onPressed: () {
+                      navigationService.push(ChooseCarScreen(widget.course));
+                    },
                     borderColor: AppColors.blackColor,
                   ),
                   20.verticalSpace,

@@ -23,8 +23,8 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     if (widget.hasSeenIntro ?? false) {
       Future.delayed(Duration(seconds: 5), () {
-        //navigationService.pushReplacement(DOBScreen());
-        navigationService.pushReplacement(EmpLogin());
+        navigationService.pushReplacement(DOBScreen());
+        //navigationService.pushReplacement(EmpLogin());
       });
     } else {
       Future.delayed(Duration(seconds: 5), () {
