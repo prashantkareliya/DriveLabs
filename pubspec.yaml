@@ -51,6 +51,7 @@ dependencies:
   table_calendar: ^3.2.0
   country_state_city_pro: ^0.0.6
   intl: ^0.20.0
+  image_picker: ^1.2.0
 
 
 dev_dependencies:

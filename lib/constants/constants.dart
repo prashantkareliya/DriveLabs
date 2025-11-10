@@ -32,6 +32,9 @@ class ApiEndPoint {
   static const String loginUser = "customer/login";
   static const String registerUser = "customer/signup";
 
+  static const String instructorFeedback = "instructor/ratings/add";
+
+  static String uploadReport(String fileType) => "customer/upload/$fileType";
 
   //Instructor
   static const String loginEmp = "instructor/login";

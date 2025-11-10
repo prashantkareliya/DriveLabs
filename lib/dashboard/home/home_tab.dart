@@ -1,6 +1,8 @@
 import 'package:drive_labs/components/context_extension.dart';
 import 'package:drive_labs/constants/app_colours/app_colors.dart';
+import 'package:drive_labs/dashboard/home/profile_detail.dart';
 import 'package:drive_labs/gen/assets.gen.dart';
+import 'package:drive_labs/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -41,69 +43,74 @@ class _HomeTabState extends State<HomeTab> {
   }
 
   profileTile() {
-    return Container(
-      padding: const EdgeInsets.only(left: 16, right: 15, top: 16, bottom: 0),
-      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(12)),
-      child: Column(
-        children: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: AppColors.yellowColor, width: 2),
+    return GestureDetector(
+      onTap: () {
+        navigationService.push(ProfileDetail());
+      },
+      child: Container(
+        padding: const EdgeInsets.only(left: 16, right: 15, top: 16, bottom: 0),
+        decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(12)),
+        child: Column(
+          children: [
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(color: AppColors.yellowColor, width: 2),
+                  ),
+                  child: Assets.images.demo.image(width: 60, height: 60, fit: BoxFit.cover),
                 ),
-                child: Assets.images.demo.image(width: 60, height: 60, fit: BoxFit.cover),
-              ),
-              15.horizontalSpace,
-              Expanded(
-                child: Column(
+                15.horizontalSpace,
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "WELCOME,",
+                        style: GoogleFonts.montserrat(fontSize: 12, color: AppColors.grayFont, fontWeight: FontWeight.w700),
+                      ),
+                      Text(
+                        "BRANDI COLLIER",
+                        style: GoogleFonts.montserrat(fontSize: 18, fontWeight: FontWeight.bold, color: AppColors.grayFont),
+                      ),
+                    ],
+                  ),
+                ),
+
+                // Yellow arrow button
+                Container(
+                  decoration: BoxDecoration(color: AppColors.yellowColor, shape: BoxShape.circle),
+                  padding: const EdgeInsets.all(12),
+                  child: Assets.icons.arrowNext.svg(),
+                ),
+              ],
+            ),
+            10.verticalSpace,
+            Divider(color: AppColors.grayFont.withValues(alpha: 0.2)),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "WELCOME,",
-                      style: GoogleFonts.montserrat(fontSize: 12, color: AppColors.grayFont, fontWeight: FontWeight.w700),
+                      "CAR TYPE",
+                      style: GoogleFonts.montserrat(fontSize: 12, color: AppColors.grayFont, fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      "BRANDI COLLIER",
+                      "COMPACT",
                       style: GoogleFonts.montserrat(fontSize: 18, fontWeight: FontWeight.bold, color: AppColors.grayFont),
                     ),
                   ],
                 ),
-              ),
-
-              // Yellow arrow button
-              Container(
-                decoration: BoxDecoration(color: AppColors.yellowColor, shape: BoxShape.circle),
-                padding: const EdgeInsets.all(12),
-                child: Assets.icons.arrowNext.svg(),
-              ),
-            ],
-          ),
-          10.verticalSpace,
-          Divider(color: AppColors.grayFont.withValues(alpha: 0.2)),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "CAR TYPE",
-                    style: GoogleFonts.montserrat(fontSize: 12, color: AppColors.grayFont, fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    "COMPACT",
-                    style: GoogleFonts.montserrat(fontSize: 18, fontWeight: FontWeight.bold, color: AppColors.grayFont),
-                  ),
-                ],
-              ),
-              Assets.images.car3.image(),
-            ],
-          ),
-        ],
+                Assets.images.car3.image(),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

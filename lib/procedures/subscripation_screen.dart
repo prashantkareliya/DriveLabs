@@ -33,11 +33,6 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
     "assets/images/7.png",
   ];
 
-  @override
-  void initState() {
-    super.initState();
-    print(widget.course);
-  }
 
   @override
   Widget build(BuildContext context) {

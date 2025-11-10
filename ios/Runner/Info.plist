@@ -29,6 +29,14 @@
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UISupportedInterfaceOrientations</key>
+	<key>NSPhotoLibraryUsageDescription</key>
+    <string>Allow MyApp to access your photos to select an image for your profile picture.</string>
+    <key>NSCameraUsageDescription</key>
+    <string>Allow MyApp to access your camera to take photos for your posts.</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Allow MyApp to access your microphone to record audio for videos.</string>
+    <key>NSDocumentsFolderUsageDescription</key>
+    <string>This app needs access to documents to upload files.</string>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>

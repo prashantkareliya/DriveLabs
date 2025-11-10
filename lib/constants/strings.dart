@@ -33,6 +33,11 @@ class ErrorString {
   static const String addressErr = "ⓘ Please enter a primary street address";
   static const String pinCodeErr = "ⓘ Please enter your area pin code";
 
+  static const String uploadFileErr = "ⓘ Please upload required documents";
+  static const String uploadPhotoErr = "ⓘ Please upload recent photo";
+  static const String uploadAadharErr = "ⓘ Please upload Aadhar card";
+  static const String uploadAgeProofErr = "ⓘ Please upload proof of age";
+
 }
 //271828
 //Messages
@@ -85,6 +90,10 @@ class LabelString {
 
   static const String labelStudentMessage = 'Student Message';
   static const String labelTotalRating = 'Total Rating';
+  static const String labelUploadPhoto = "UPLOAD \nRECENT PHOTO";
+  static const String labelAadhar = "AADHAR CARD";
+  static const String labelAgeProof = "PROOF OF AGE";
+  static const String labelSteps = "Complete your license \nrequirements in 3 easy steps";
 
 }
 

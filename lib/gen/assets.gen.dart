@@ -30,6 +30,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/arrow_up.svg
   SvgGenImage get arrowUp => const SvgGenImage('assets/icons/arrow_up.svg');
 
+  /// File path: assets/icons/close.svg
+  SvgGenImage get close => const SvgGenImage('assets/icons/close.svg');
+
   /// File path: assets/icons/emp_home.svg
   SvgGenImage get empHome => const SvgGenImage('assets/icons/emp_home.svg');
 
@@ -122,6 +125,7 @@ class $AssetsIconsGen {
     arrowNext,
     arrowRight,
     arrowUp,
+    close,
     empHome,
     empProfile,
     four,
@@ -180,6 +184,10 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/7.png
   AssetGenImage get a7 => const AssetGenImage('assets/images/7.png');
+
+  /// File path: assets/images/about_us.png
+  AssetGenImage get aboutUs =>
+      const AssetGenImage('assets/images/about_us.png');
 
   /// File path: assets/images/cancel slot.png
   AssetGenImage get cancelSlot =>
@@ -276,6 +284,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/login_registration_2.png
   AssetGenImage get loginRegistration2 =>
       const AssetGenImage('assets/images/login_registration_2.png');
+
+  /// File path: assets/images/logout.png
+  AssetGenImage get logout => const AssetGenImage('assets/images/logout.png');
 
   /// File path: assets/images/map.png
   AssetGenImage get map => const AssetGenImage('assets/images/map.png');
@@ -426,6 +437,7 @@ class $AssetsImagesGen {
     a5,
     a6,
     a7,
+    aboutUs,
     cancelSlot,
     car1,
     car2,
@@ -453,6 +465,7 @@ class $AssetsImagesGen {
     locationText,
     loginRegistration,
     loginRegistration2,
+    logout,
     map,
     mapMyIndia,
     ourCourses,

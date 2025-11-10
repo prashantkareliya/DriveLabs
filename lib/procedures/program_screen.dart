@@ -70,10 +70,8 @@ class _ProgramScreenState extends State<ProgramScreen> {
                 showSpinner = true;
               }
               if (state is LoadedState) {
-                setState(() {
-                  showSpinner = false;
-                  courseData = state.data;
-                });
+                showSpinner = false;
+                courseData = state.data;
               }
             },
             builder: (context, state) {

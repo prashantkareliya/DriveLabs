@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:drive_labs/gen/assets.gen.dart';
 import 'package:drive_labs/main.dart';
 
+import '../dashboard/home/profile_detail.dart';
+
 class SplashScreen extends StatefulWidget {
   bool? hasSeenIntro;
 
@@ -23,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     if (widget.hasSeenIntro ?? false) {
       Future.delayed(Duration(seconds: 5), () {
-        navigationService.pushReplacement(DOBScreen());
+        navigationService.pushReplacement(ProfileDetail());
         //navigationService.pushReplacement(EmpLogin());
       });
     } else {
