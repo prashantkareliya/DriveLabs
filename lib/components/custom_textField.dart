@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  final String label;
+  final String? label;
   final String hintText;
   final String? rightText;
   final TextEditingController? controller;
@@ -16,7 +16,7 @@ class CustomTextFormField extends StatelessWidget {
 
   const CustomTextFormField({
     super.key,
-    required this.label,
+    this.label,
     required this.hintText,
     this.rightText,
     this.controller,
@@ -32,8 +32,9 @@ class CustomTextFormField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        if (label != null)
         Text(
-          label,
+          label ??"",
           style: GoogleFonts.montserrat(fontSize: 14, fontWeight: FontWeight.w600, color: AppColors.black),
         ),
         4.verticalSpace,

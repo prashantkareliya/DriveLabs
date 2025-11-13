@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:drive_labs/components/context_extension.dart';
 import 'package:drive_labs/components/custom_button.dart';
@@ -149,7 +147,7 @@ class _ProfileDetailState extends State<ProfileDetail> {
                       ),
                     ],
                   ),
-                  10.verticalSpace,
+                  20.verticalSpace,
                   Text(
                     "Referral code",
                     style: GoogleFonts.montserrat(
@@ -159,13 +157,13 @@ class _ProfileDetailState extends State<ProfileDetail> {
                       height: 1.8,
                     ),
                   ),
-                  10.verticalSpace, // Added space before referral field
+                  5.verticalSpace,
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Expanded(
-                        child: CustomTextFormField(hintText: "Referral code", label: ''),
+                        child: CustomTextFormField(hintText: "Referral code"),
                       ),
                       10.horizontalSpace, // Add some space between the field and the button
                       Container(
@@ -183,9 +181,9 @@ class _ProfileDetailState extends State<ProfileDetail> {
                       ),
                     ],
                   ),
-                  10.verticalSpace,
+                  15.verticalSpace,
                   Divider(color: AppColors.grayFont.withOpacity(0.2)),
-                  10.verticalSpace,
+                  15.verticalSpace,
                   Text(
                     "Instructor Detail",
                     style: GoogleFonts.montserrat(

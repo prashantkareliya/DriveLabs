@@ -100,8 +100,8 @@ class _ProgramScreenState extends State<ProgramScreen> {
 
                             return GestureDetector(
                               onTap: () {
-                                //navigationService.push(ProgramMapScreen());
-                                navigationService.push(SubscriptionScreen(courseData?.courses?[index]));
+                                navigationService.push(ProgramMapScreen(courseData?.courses?[index]));
+                                //navigationService.push(SubscriptionScreen(courseData?.courses?[index]));
                               },
                               child: Stack(
                                 clipBehavior: Clip.none,

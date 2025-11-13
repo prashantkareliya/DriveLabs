@@ -1,6 +1,9 @@
 import 'package:drive_labs/Employee/login/emp_login.dart';
 import 'package:drive_labs/auth/dob_screen.dart';
+import 'package:drive_labs/dashboard/dashboard_screen.dart';
 import 'package:drive_labs/intro/intro_screens.dart';
+import 'package:drive_labs/procedures/program_map_screen.dart';
+import 'package:drive_labs/procedures/program_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:drive_labs/gen/assets.gen.dart';
@@ -25,8 +28,10 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     if (widget.hasSeenIntro ?? false) {
       Future.delayed(Duration(seconds: 5), () {
-        navigationService.pushReplacement(ProfileDetail());
+        navigationService.pushReplacement(DashboardScreen());
         //navigationService.pushReplacement(EmpLogin());
+        //navigationService.pushReplacement(DOBScreen());
+
       });
     } else {
       Future.delayed(Duration(seconds: 5), () {

@@ -1,30 +1,27 @@
 class GetAllCourseResponse {
-  bool? error;
   String? message;
   int? count;
   List<Courses>? courses;
 
-  GetAllCourseResponse({this.error, this.message, this.count, this.courses});
+  GetAllCourseResponse({this.message, this.count, this.courses});
 
   GetAllCourseResponse.fromJson(Map<String, dynamic> json) {
-    error = json['error'];
     message = json['message'];
     count = json['count'];
     if (json['courses'] != null) {
       courses = <Courses>[];
       json['courses'].forEach((v) {
-        courses!.add(Courses.fromJson(v));
+        courses!.add(new Courses.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['error'] = error;
-    data['message'] = message;
-    data['count'] = count;
-    if (courses != null) {
-      data['courses'] = courses!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['message'] = this.message;
+    data['count'] = this.count;
+    if (this.courses != null) {
+      data['courses'] = this.courses!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -49,34 +46,40 @@ class Courses {
   List<String>? overviewPoints;
   List<CarTypes>? carTypes;
   ExtrasAndBenefits? extrasAndBenefits;
+  List<Weeks>? weeks;
+  String? timing;
+  String? timing1;
 
-  //List<Null>? weeks;
-
-  Courses({
-    this.location,
-    this.gamification,
-    this.sId,
-    this.name,
-    this.tagline,
-    this.description,
-    this.durationDays,
-    this.price,
-    this.originalPrice,
-    this.finalOwnCarPrice,
-    this.priceInflationNoCar,
-    this.city,
-    this.state,
-    this.country,
-    this.radius,
-    this.overviewPoints,
-    this.carTypes,
-    this.extrasAndBenefits,
-    //this.weeks
-  });
+  Courses(
+      {this.location,
+        this.gamification,
+        this.sId,
+        this.name,
+        this.tagline,
+        this.description,
+        this.durationDays,
+        this.price,
+        this.originalPrice,
+        this.finalOwnCarPrice,
+        this.priceInflationNoCar,
+        this.city,
+        this.state,
+        this.country,
+        this.radius,
+        this.overviewPoints,
+        this.carTypes,
+        this.extrasAndBenefits,
+        this.weeks,
+        this.timing,
+        this.timing1});
 
   Courses.fromJson(Map<String, dynamic> json) {
-    location = json['location'] != null ? Location.fromJson(json['location']) : null;
-    gamification = json['gamification'] != null ? Gamification.fromJson(json['gamification']) : null;
+    location = json['location'] != null
+        ? new Location.fromJson(json['location'])
+        : null;
+    gamification = json['gamification'] != null
+        ? new Gamification.fromJson(json['gamification'])
+        : null;
     sId = json['_id'];
     name = json['name'];
     tagline = json['tagline'];
@@ -94,49 +97,55 @@ class Courses {
     if (json['carTypes'] != null) {
       carTypes = <CarTypes>[];
       json['carTypes'].forEach((v) {
-        carTypes!.add(CarTypes.fromJson(v));
+        carTypes!.add(new CarTypes.fromJson(v));
       });
     }
-    extrasAndBenefits = json['extrasAndBenefits'] != null ? ExtrasAndBenefits.fromJson(json['extrasAndBenefits']) : null;
-    /*if (json['weeks'] != null) {
-      weeks = <Null>[];
+    extrasAndBenefits = json['extrasAndBenefits'] != null
+        ? new ExtrasAndBenefits.fromJson(json['extrasAndBenefits'])
+        : null;
+    if (json['weeks'] != null) {
+      weeks = <Weeks>[];
       json['weeks'].forEach((v) {
-        weeks!.add(new Null.fromJson(v));
+        weeks!.add(new Weeks.fromJson(v));
       });
-    }*/
+    }
+    timing = json['timing'];
+    timing1 = json[' timing'];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    if (location != null) {
-      data['location'] = location!.toJson();
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    if (this.location != null) {
+      data['location'] = this.location!.toJson();
     }
-    if (gamification != null) {
-      data['gamification'] = gamification!.toJson();
+    if (this.gamification != null) {
+      data['gamification'] = this.gamification!.toJson();
     }
-    data['_id'] = sId;
-    data['name'] = name;
-    data['tagline'] = tagline;
-    data['description'] = description;
-    data['durationDays'] = durationDays;
-    data['price'] = price;
-    data['originalPrice'] = originalPrice;
-    data['finalOwnCarPrice'] = finalOwnCarPrice;
-    data['priceInflationNoCar'] = priceInflationNoCar;
-    data['city'] = city;
-    data['state'] = state;
-    data['country'] = country;
-    data['radius'] = radius;
-    data['overviewPoints'] = overviewPoints;
-    if (carTypes != null) {
-      data['carTypes'] = carTypes!.map((v) => v.toJson()).toList();
+    data['_id'] = this.sId;
+    data['name'] = this.name;
+    data['tagline'] = this.tagline;
+    data['description'] = this.description;
+    data['durationDays'] = this.durationDays;
+    data['price'] = this.price;
+    data['originalPrice'] = this.originalPrice;
+    data['finalOwnCarPrice'] = this.finalOwnCarPrice;
+    data['priceInflationNoCar'] = this.priceInflationNoCar;
+    data['city'] = this.city;
+    data['state'] = this.state;
+    data['country'] = this.country;
+    data['radius'] = this.radius;
+    data['overviewPoints'] = this.overviewPoints;
+    if (this.carTypes != null) {
+      data['carTypes'] = this.carTypes!.map((v) => v.toJson()).toList();
     }
-    if (extrasAndBenefits != null) {
-      data['extrasAndBenefits'] = extrasAndBenefits!.toJson();
+    if (this.extrasAndBenefits != null) {
+      data['extrasAndBenefits'] = this.extrasAndBenefits!.toJson();
     }
-    /*if (this.weeks != null) {
+    if (this.weeks != null) {
       data['weeks'] = this.weeks!.map((v) => v.toJson()).toList();
-    }*/
+    }
+    data['timing'] = this.timing;
+    data[' timing'] = this.timing1;
     return data;
   }
 }
@@ -153,9 +162,9 @@ class Location {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['type'] = type;
-    data['coordinates'] = coordinates;
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['type'] = this.type;
+    data['coordinates'] = this.coordinates;
     return data;
   }
 }
@@ -174,10 +183,10 @@ class Gamification {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['levels'] = levels;
-    data['parametersTracked'] = parametersTracked;
-    data['certificate'] = certificate;
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['levels'] = this.levels;
+    data['parametersTracked'] = this.parametersTracked;
+    data['certificate'] = this.certificate;
     return data;
   }
 }
@@ -189,7 +198,12 @@ class CarTypes {
   String? sessionTime;
   List<String>? keyHighlights;
 
-  CarTypes({this.type, this.offerPrice, this.regularPrice, this.sessionTime, this.keyHighlights});
+  CarTypes(
+      {this.type,
+        this.offerPrice,
+        this.regularPrice,
+        this.sessionTime,
+        this.keyHighlights});
 
   CarTypes.fromJson(Map<String, dynamic> json) {
     type = json['type'];
@@ -200,12 +214,12 @@ class CarTypes {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['type'] = type;
-    data['offerPrice'] = offerPrice;
-    data['regularPrice'] = regularPrice;
-    data['sessionTime'] = sessionTime;
-    data['keyHighlights'] = keyHighlights;
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['type'] = this.type;
+    data['offerPrice'] = this.offerPrice;
+    data['regularPrice'] = this.regularPrice;
+    data['sessionTime'] = this.sessionTime;
+    data['keyHighlights'] = this.keyHighlights;
     return data;
   }
 }
@@ -216,7 +230,11 @@ class ExtrasAndBenefits {
   int? extraClassPrice;
   int? extraReschedulePrice;
 
-  ExtrasAndBenefits({this.ownCarClasses, this.freeReschedules, this.extraClassPrice, this.extraReschedulePrice});
+  ExtrasAndBenefits(
+      {this.ownCarClasses,
+        this.freeReschedules,
+        this.extraClassPrice,
+        this.extraReschedulePrice});
 
   ExtrasAndBenefits.fromJson(Map<String, dynamic> json) {
     ownCarClasses = json['ownCarClasses'];
@@ -226,11 +244,70 @@ class ExtrasAndBenefits {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['ownCarClasses'] = ownCarClasses;
-    data['freeReschedules'] = freeReschedules;
-    data['extraClassPrice'] = extraClassPrice;
-    data['extraReschedulePrice'] = extraReschedulePrice;
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['ownCarClasses'] = this.ownCarClasses;
+    data['freeReschedules'] = this.freeReschedules;
+    data['extraClassPrice'] = this.extraClassPrice;
+    data['extraReschedulePrice'] = this.extraReschedulePrice;
+    return data;
+  }
+}
+
+class Weeks {
+  int? weekNumber;
+  List<Lessons>? lessons;
+
+  Weeks({this.weekNumber, this.lessons});
+
+  Weeks.fromJson(Map<String, dynamic> json) {
+    weekNumber = json['weekNumber'];
+    if (json['lessons'] != null) {
+      lessons = <Lessons>[];
+      json['lessons'].forEach((v) {
+        lessons!.add(new Lessons.fromJson(v));
+      });
+    }
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['weekNumber'] = this.weekNumber;
+    if (this.lessons != null) {
+      data['lessons'] = this.lessons!.map((v) => v.toJson()).toList();
+    }
+    return data;
+  }
+}
+
+class Lessons {
+  int? dayNumber;
+  String? title;
+  String? description;
+  bool? locked;
+  bool? completed;
+
+  Lessons(
+      {this.dayNumber,
+        this.title,
+        this.description,
+        this.locked,
+        this.completed});
+
+  Lessons.fromJson(Map<String, dynamic> json) {
+    dayNumber = json['dayNumber'];
+    title = json['title'];
+    description = json['description'];
+    locked = json['locked'];
+    completed = json['completed'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['dayNumber'] = this.dayNumber;
+    data['title'] = this.title;
+    data['description'] = this.description;
+    data['locked'] = this.locked;
+    data['completed'] = this.completed;
     return data;
   }
 }

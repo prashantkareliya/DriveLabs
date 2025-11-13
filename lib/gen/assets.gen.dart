@@ -189,6 +189,9 @@ class $AssetsImagesGen {
   AssetGenImage get aboutUs =>
       const AssetGenImage('assets/images/about_us.png');
 
+  /// File path: assets/images/bg_map.png
+  AssetGenImage get bgMap => const AssetGenImage('assets/images/bg_map.png');
+
   /// File path: assets/images/cancel slot.png
   AssetGenImage get cancelSlot =>
       const AssetGenImage('assets/images/cancel slot.png');
@@ -201,6 +204,10 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/car_3.png
   AssetGenImage get car3 => const AssetGenImage('assets/images/car_3.png');
+
+  /// File path: assets/images/car_yellow.svg
+  SvgGenImage get carYellow =>
+      const SvgGenImage('assets/images/car_yellow.svg');
 
   /// File path: assets/images/choose_car_1.png
   AssetGenImage get chooseCar1 =>
@@ -277,6 +284,9 @@ class $AssetsImagesGen {
   AssetGenImage get locationText =>
       const AssetGenImage('assets/images/location_text.png');
 
+  /// File path: assets/images/lock.png
+  AssetGenImage get lock => const AssetGenImage('assets/images/lock.png');
+
   /// File path: assets/images/login_registration.png
   AssetGenImage get loginRegistration =>
       const AssetGenImage('assets/images/login_registration.png');
@@ -350,6 +360,16 @@ class $AssetsImagesGen {
   AssetGenImage get progressOverview =>
       const AssetGenImage('assets/images/progress_overview.png');
 
+  /// File path: assets/images/road.png
+  AssetGenImage get roadPng => const AssetGenImage('assets/images/road.png');
+
+  /// File path: assets/images/road.svg
+  SvgGenImage get roadSvg => const SvgGenImage('assets/images/road.svg');
+
+  /// File path: assets/images/road_line.png
+  AssetGenImage get roadLine =>
+      const AssetGenImage('assets/images/road_line.png');
+
   /// File path: assets/images/route_detail.png
   AssetGenImage get routeDetail =>
       const AssetGenImage('assets/images/route_detail.png');
@@ -422,12 +442,24 @@ class $AssetsImagesGen {
   AssetGenImage get tempMap =>
       const AssetGenImage('assets/images/temp_map.png');
 
+  /// File path: assets/images/test.png
+  AssetGenImage get test => const AssetGenImage('assets/images/test.png');
+
   /// File path: assets/images/test_series.png
   AssetGenImage get testSeries =>
       const AssetGenImage('assets/images/test_series.png');
 
+  /// File path: assets/images/tree.png
+  AssetGenImage get tree => const AssetGenImage('assets/images/tree.png');
+
+  /// File path: assets/images/tree_2.png
+  AssetGenImage get tree2 => const AssetGenImage('assets/images/tree_2.png');
+
+  /// File path: assets/images/tree_3.png
+  AssetGenImage get tree3 => const AssetGenImage('assets/images/tree_3.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [
+  List<dynamic> get values => [
     a01,
     a02,
     a1,
@@ -438,10 +470,12 @@ class $AssetsImagesGen {
     a6,
     a7,
     aboutUs,
+    bgMap,
     cancelSlot,
     car1,
     car2,
     car3,
+    carYellow,
     chooseCar1,
     confirmClass,
     course1,
@@ -463,6 +497,7 @@ class $AssetsImagesGen {
     loader,
     locationBg,
     locationText,
+    lock,
     loginRegistration,
     loginRegistration2,
     logout,
@@ -482,6 +517,9 @@ class $AssetsImagesGen {
     programMap,
     progress,
     progressOverview,
+    roadPng,
+    roadSvg,
+    roadLine,
     routeDetail,
     statusBar,
     studentDetail,
@@ -500,7 +538,11 @@ class $AssetsImagesGen {
     tabRegisterInactive,
     teachingSchedule,
     tempMap,
+    test,
     testSeries,
+    tree,
+    tree2,
+    tree3,
   ];
 }
 

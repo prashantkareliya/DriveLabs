@@ -11,7 +11,6 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'choose_car_screen.dart';
 
-
 class PaymentScreen extends StatefulWidget {
   const PaymentScreen({super.key});
 
@@ -100,7 +99,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 backgroundColor: AppColors.yellowColor,
                 textColor: AppColors.blackColor,
                 onPressed: () {
-                 // navigationService.push(ChooseCarScreen());
+                  // navigationService.push(ChooseCarScreen());
                 },
                 borderColor: AppColors.blackColor,
               ),
@@ -175,11 +174,19 @@ class _PaymentScreenState extends State<PaymentScreen> {
       children: [
         Text(
           title,
-          style: GoogleFonts.montserrat(fontSize: 15, fontWeight: isBold ? FontWeight.w700 : FontWeight.w500, color: AppColors.blackColor),
+          style: GoogleFonts.montserrat(
+            fontSize: 15,
+            fontWeight: isBold ? FontWeight.w700 : FontWeight.w500,
+            color: AppColors.blackColor,
+          ),
         ),
         Text(
           amount,
-          style: GoogleFonts.montserrat(fontSize: 15, fontWeight: isBold ? FontWeight.w700 : FontWeight.w500, color: Colors.black),
+          style: GoogleFonts.montserrat(
+            fontSize: 15,
+            fontWeight: isBold ? FontWeight.w700 : FontWeight.w500,
+            color: Colors.black,
+          ),
         ),
       ],
     );
