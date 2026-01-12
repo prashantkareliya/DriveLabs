@@ -1,15 +1,12 @@
 import 'dart:math';
 
 import 'package:drive_labs/constants/strings.dart';
-import 'package:drive_labs/procedures/program_map_screen.dart';
 import 'package:drive_labs/intro/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'Employee/dash/emp_dashboard.dart';
-import 'Employee/emp_login.dart';
 import 'components/navigation_service.dart';
 import 'constants/app_colours/app_colors.dart';
 
